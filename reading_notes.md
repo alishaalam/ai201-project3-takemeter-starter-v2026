@@ -1,5 +1,8 @@
 # Milestone 1 — Community and reading notes
 
+> **AI assistance:** Claude helped with the reading, sampling and intent coding described in this file, including the 399 posts in the Milestone 2 addendum. The judgments in it were reviewed by me.
+
+
 ## Community
 
 **r/smallbusiness** (reddit.com/r/smallbusiness) — public, no login, high volume, real spread in post quality.
@@ -139,7 +142,7 @@ The posts were first coded by intent, bottom-up from a larger pull. The four int
 | Dropped as polls (`peers_poll`, 31) or market-research / lead-gen (7) | 38 |
 | **Posts labelled** | **361** |
 
-**Step 1, intent coding.** I read every remaining post (title, plus the start and end of long posts) and wrote a free-text note of what the poster wanted. Grouping the notes gave four intent groups, split by what the poster does with the replies: `wants_plan` 156, `wants_peer_input` 110, `wants_verdict` 68, `wants_answer` 65. A first keyword grouping gave 39% / 28% / 18% / 16%. Reading each group showed that "how did you get your first clients?" is asked of peers but is really a request for a method, so those moved to `wants_plan`.
+**Step 1, intent coding.** With Claude's help, every remaining post was read (title, plus the start and end of long posts) and given a free-text note of what the poster wanted. Grouping the notes gave four intent groups, split by what the poster does with the replies: `wants_plan` 156, `wants_peer_input` 110, `wants_verdict` 68, `wants_answer` 65. A first keyword grouping gave 39% / 28% / 18% / 16%. Reading each group showed that "how did you get your first clients?" is asked of peers but is really a request for a method, so those moved to `wants_plan`.
 
 **Step 2, why re-cut by topic.** Intent labels shared vocabulary. A verdict about an LLC and a verdict about an ad budget have little in common, and a classifier learns words, not intent. Sorting by what the poster is asking *for* gave four labels with their own vocabulary.
 
@@ -156,7 +159,7 @@ The first pass was a rule on the old child label (`answer_pick` → tools, `answ
 
 **Trade-offs and flags**
 - `GROWTH_ADVICE` is 41.0%, just over the 40% ceiling. The smallest label, `TOOLS_RECOMMENDATION`, is 13.3%, about 27 of 200 posts.
-- Intent is a harder distinction to label consistently than topic, but topic labels here still depend on judgment (is "how do I price a service" growth or money?). I labelled alone, so the unit 6 agreement check is the first test.
+- Intent is a harder distinction to label consistently than topic, but topic labels here still depend on judgment (is "how do I price a service" growth or money?). Claude helped with this coding and I did not have a second independent reader, so the unit 6 agreement check is the first test.
 - Verdict posts are spread over all four labels (41 growth, 18 legal, 5 operations, 4 tools). Intent is no longer its own label.
 - The poll removal was done as a group, so some genuine polls went with the market-research ones. "Promo-light" posts remain and may still hide some lead-gen.
 - Some intents are inferred. 1x6c16w and 1x3nag0 state no ask, and I inferred one. A second reader could infer a different ask.

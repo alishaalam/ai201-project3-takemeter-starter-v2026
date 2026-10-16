@@ -228,7 +228,7 @@ The counts come from sampling for balance, so they do not match the natural mix 
 
 - **The 180 pre-labelled rows in `labels.csv`** were labelled first by Claude, from each post's title plus roughly its first 230 characters, and then reviewed by me one at a time. They are marked `pre-labelled (Claude), checked` (172) or `pre-labelled (Claude), corrected` (8) in the `note` column. Part of my review was on shortened text, as described in the Dataset section.
 - **The 20 cold rows** were labelled by me with no AI help and are marked `cold`. Three of them were corrected after a click check and are marked `cold (corrected after click check)`. Four were redrawn after I removed promotion or market-research posts.
-- **Posts used to derive the taxonomy:** the 399-post pull from 9–16 Oct 2026 came from an earlier working session, described in `reading_notes.md`. It is not in `labels.csv`. In this project, Claude proposed the hybrid taxonomy from it and I chose and tested it (Moment 1).
+- **Posts used to derive the taxonomy:** the 399-post pull from 9–16 Oct 2026 came from an earlier working session, described in `reading_notes.md`. Claude helped read and code those posts into intent groups, and I reviewed them. They are not in `labels.csv`. Claude then proposed the hybrid taxonomy from them and I chose and tested it (Moment 1).
 - **Code and filtering:** Claude pulled the posts from the Arctic Shift API, wrote the filtering, and ran the notebook cells for the training run. The numbers in `results.json` come from that run.
 
 <!-- ═══════════════════════ UNIT 6 — THE TEST ═══════════════════════
