@@ -39,50 +39,101 @@
 
 ## What This Does
 
-<!-- Your community, and what your classifier sorts posts into. Three or four
-     sentences. -->
-
-
+r/smallbusiness is a public community where owners and would-be owners ask each other for help. This classifier reads one text post and sorts it by **what the poster wants the replies to do for them**: give a plan, give a specific answer, give a verdict, or share experience. It sorts by intent, not by topic, so a post about taxes and a post about marketing can land in the same label. Ads, "[For Hire]" posts and self-promotion are removed before labelling, because they ask nothing of the community. The labels came from coding about 400 posts from a 7-day pull (9–16 Oct 2026) one at a time, and were not designed first.
 
 ---
 
 ## Label Taxonomy
 
-<!-- Each label: a one-sentence definition and two real examples from your
-     reading. Then your decision rule for the hardest boundary.
+Four parent labels. The classifier trains on these only. Each parent has child sub-types, recorded in the `note` column of `labels.csv`, that keep the larger labels meaningful and settle edge cases. The classifier never sees them.
 
-     The decision rule is worth a point on its own and it's the thing most
-     people leave out. Every taxonomy has a hardest boundary. Name yours. -->
+**The one question that sorts every post:** *what will the poster do with the replies?*
 
-### `label_one`
+| Label | The poster will... | Share of 399 coded posts | Children |
+|---|---|---|---|
+| `wants_plan` | act on a method | 39% | `plan_start` (45), `plan_grow` (48), `plan_fix` (63) |
+| `wants_peer_input` | read, compare, or commiserate | 28% | `peers_discuss` (44), `peers_shared` (35), `peers_poll` (31) |
+| `wants_verdict` | decide, using a judgment | 17% | `verdict_choice` (52), `verdict_idea` (16) |
+| `wants_answer` | use one specific item or fact | 16% | `answer_pick` (42), `answer_fact` (23) |
 
-**Definition:**
+### `wants_plan`
 
-**Example 1:**
->
+**Definition:** The poster describes their own goal or problem and asks for steps, tactics or ideas to act on, such as how to get customers, how to start something, or how to handle a situation.
 
-**Example 2:**
->
+**Children:** `plan_start` (how to begin, or ideas for what to start), `plan_grow` (customers, leads, pricing, marketing), `plan_fix` (a live operational, money or people problem, including most vents).
 
-### `label_two`
+**Example 1** (`plan_grow`, 1x6sh4k):
+> "Does anyone here have a way to get more leads without paying for advertising or for leads?"
 
-**Definition:**
+**Example 2** (`plan_fix`, 1x4pwa9):
+> "What is your method/trick that worked with you to push them paying on time? or at least to pay the due amount?"
 
-**Example 1:**
->
+### `wants_answer`
 
-**Example 2:**
->
+**Definition:** The poster asks for one specific item or fact, such as a recommended tool, vendor, supplier or professional, or a definite legal, tax or compliance answer.
+
+**Children:** `answer_pick` (a named item to choose), `answer_fact` (a yes/no or rule).
+
+**Example 1** (`answer_pick`, 1x7kqyu):
+> "Looking for scheduling app recommendations. Something that allows you to add up to 10-15 different employees, at one location where hours worked can be pulled to run payroll"
+
+**Example 2** (`answer_fact`, 1x5a2cj):
+> "Can I legally sell my canned goods on a website and deliver them to other states?"
+
+### `wants_verdict`
+
+**Definition:** The poster puts a specific idea, option or decision on the table and asks whether it is good, right or worth doing.
+
+**Children:** `verdict_choice` (a decision, deal or situation to judge), `verdict_idea` (an idea, plan, price or offer to critique).
+
+**Example 1** (`verdict_choice`, 1x6disu):
+> "Sell and go to uni, or keep it running with a team lead?"
+
+**Example 2** (`verdict_choice`, 1x6ohnl):
+> "Opinions wanted on restaurant placemat advertising"
+
+### `wants_peer_input`
+
+**Definition:** The poster asks the community to share experiences, practices or opinions, or whether others are in the same situation, with no method, item or verdict they need to act on.
+
+**Children:** `peers_discuss` (an opinion, story or lesson offered for discussion), `peers_shared` ("has anyone been through this?", often after a vent), `peers_poll` (a survey of how people do something).
+
+**Example 1** (`peers_poll`, 1x6fcqg):
+> "What’s the manual process in your business that simply refuses to die, and why’s it still there?"
+
+**Example 2** (`peers_shared`, 1x71vce):
+> "Anyone been through this?"
 
 ### The hardest boundary
 
-**Which two labels:**
+**Which two labels:** `wants_plan` and `wants_peer_input`.
 
-**The decision rule I used every time:**
-<!-- e.g. "If the post names a specific checkable fact, it's `analysis`, even
-     if the tone is heated." -->
+They collide because many posts ask peers a question about the past ("how did you...?") that is really a request for a method.
 
+**The decision rule I used every time:** Ask what the poster will do with the replies.
+- If the poster states a **live goal or problem of their own** and wants something to act on, it is `wants_plan`, even when phrased as "how did you...?". 1x23z1e asks "where did your first few bookings come from?" about the poster's own new business, so it is `wants_plan`.
+- If the poster only **surveys, discusses, or asks whether others share the situation**, it is `wants_peer_input`. 1x4kafe asks "where did your last 5 new customers come from?" with no problem of their own, so it is `wants_peer_input`.
 
+Two rules apply to every boundary:
+1. **Venting always has an ask.** I find it from the closing question, or by asking what reply would actually help. A vent that asks for a method goes to `wants_plan`. A vent that asks "anyone else?" goes to `wants_peer_input`. 1x3phzx ("How did you successfully escalate the situation?") is `wants_plan`. 1x71vce ("Anyone been through this?") is `wants_peer_input`.
+2. **Mixed asks:** the first explicit ask (the title, else the first question) decides, and the second ask is recorded as the runner-up.
+
+### Edge cases
+
+| Post | Candidate labels | Chosen | Why |
+|---|---|---|---|
+| 1x7d1dx (henna artist) | `wants_plan` / `wants_answer` | `wants_plan` | First ask is "boost my viewership and bookings." App recommendations are secondary |
+| 1x7ijwd (home-watch invoicing) | `wants_answer` / `wants_plan` | `wants_answer` | First ask is "What software do you use?" Reminder wording comes second |
+| 1x5do6e (S Corp vs LLC) | `wants_verdict` / `wants_plan` | `wants_verdict` | The title asks whether to switch. "Questions to ask" is secondary |
+| 1x5mvaq (freelancer vs agency) | `wants_verdict` / `wants_peer_input` | `wants_verdict` | The poster states their own two options and asks "what would you do" |
+| 1x5gi85 (left corporate, went back) | `wants_peer_input` / `wants_verdict` | `wants_peer_input` | Asks for stories ("can we hear some reality check stories too?"), not a judgment on one option |
+| 1x7ery0 (Shopify fine) | `wants_plan` / `wants_peer_input` | `wants_plan` | Opens with "has anyone challenged one?" but ends on whether there is a formal appeal process |
+| 1x6c16w (stalking, new LLC) | no explicit ask | `wants_plan` | Implicit ask: how to run a business privately and safely |
+| 1x3nag0 (growth ceiling, "feeling like a loser") | no explicit ask | `wants_peer_input` | Implicit ask: "is there anyone who felt that way?" |
+| 1x6l0ik, 1x1uv0c | `wants_plan` / promo | `wants_plan` | Same templated closing ("Maybe you've dealt with a similar..."). May be disguised lead-gen. Review in Milestone 4 |
+| 1x3a612, 1x39qys | any | by the rules above | Written in French. Keep or drop in Milestone 4 |
+
+Reposts by the same author also exist (for example 1x5km93 and 1x5knht, 1x4bet3 and 1x4bdt1, 1x3tzeh and 1x3twvd). They must be deduplicated in Milestone 4 so they don't land in different splits.
 
 ---
 

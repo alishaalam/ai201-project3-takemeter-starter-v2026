@@ -120,3 +120,42 @@ Candidate distinctions: **(1) concrete specifics vs. generic, (2) own reasoning 
 - Is a ~13% promo class enough, or should Milestone 4 oversample it deliberately?
 - Should hybrids (1x5qm45, 1x5yuxm) get a tiebreak rule, or be left out of the 200?
 - Does the 34% `[removed]` rate hold on a different week, or was this a spam-heavy window?
+
+---
+
+## Milestone 2 addendum — how the four labels were derived
+
+The labels were coded bottom-up from a larger pull. They were not designed first.
+
+| Step | Count |
+|---|---|
+| Submissions pulled (9–16 Oct 2026, Arctic Shift) | 800 |
+| `[removed]` / `[deleted]` | 268 |
+| Self-posts of 150 characters or fewer | 32 |
+| Usable text posts | 500 |
+| Dropped as promotion (49 by rule and manual check, 51 more caught while reading) | 100 |
+| Unlabelable (1x2mmhv, asks permission to ask) | 1 |
+| **Posts coded** | **399** |
+
+**How:** I read every remaining post (title, plus the start and end of long posts) and wrote a free-text note of what the poster wanted. Then I grouped the notes. Four groups emerged, split by what the poster does with the replies. A first keyword grouping gave 39% / 28% / 18% / 16%. Reading each group showed that "how did you get your first clients?" is asked of peers but is really a request for a method, so those moved to `wants_plan`. Final counts:
+
+| Label | Posts | Share | Children |
+|---|---|---|---|
+| `wants_plan` | 156 | 39.1% | `plan_start` 45, `plan_grow` 48, `plan_fix` 63 |
+| `wants_peer_input` | 110 | 27.6% | `peers_discuss` 44, `peers_shared` 35, `peers_poll` 31 |
+| `wants_verdict` | 68 | 17.0% | `verdict_choice` 52, `verdict_idea` 16 |
+| `wants_answer` | 65 | 16.3% | `answer_pick` 42, `answer_fact` 23 |
+
+**Trade-offs and flags**
+- `wants_plan` at 39.1% is the mild imbalance you accepted, just under the 40% ceiling. The smallest label, `wants_answer`, is 16.3%, about 33 of 200 posts.
+- Intent is a harder distinction to label consistently than topic. I coded alone, so the unit 6 agreement check is the first test of that.
+- The child split was made after the fact. 27 posts had their child corrected by hand after a keyword pass, so children are less reliable than parents.
+- Some intents are inferred. 1x6c16w and 1x3nag0 state no ask, and I inferred one. A second reader could infer a different ask.
+- 30 of the 399 are market-research-style polls or carry a "promo-ish" note from my reading, and 2 templated posts (1x6l0ik, 1x1uv0c) may be disguised lead-gen. I kept them and flagged them. Most are `wants_peer_input` (`peers_poll`), so that child is the one most exposed to hidden promotion.
+- The pulled pool is in my scratchpad, not the repo, as you asked. Milestone 4 needs a fresh pull of the same shape.
+
+## Open Questions
+
+- Should the six repost pairs be collapsed to one post each in Milestone 4, or kept out of the same split?
+- Do you want the two French posts (1x3a612, 1x39qys) kept? The model is English-trained.
+- Is the 39.1% `wants_plan` share acceptable, or should Milestone 4 undersample it?
