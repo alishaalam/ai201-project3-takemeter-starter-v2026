@@ -139,48 +139,47 @@ Reposts by the same author also exist (for example 1x5km93 and 1x5knht, 1x4bet3 
 
 ## The Dataset
 
-<!-- Where you collected from, how you labelled, your counts, and three hard
-     cases. -->
+**Where the posts came from:** r/smallbusiness, via the Arctic Shift public archive API. I pulled 1,777 submissions from 25 Sep to 8 Oct 2026, a window before the 9 to 16 Oct pull I used to build the taxonomy, so no post from the taxonomy pool is in `labels.csv`. I dropped removed/deleted and non-text posts, posts of 150 characters or fewer, repeat titles, and posts matching contact-detail or plug patterns. That left 890 candidates. I labelled a random 380 of them (20 cold, 360 pre-labelled). I dropped 99 of the 360 as promotion, polls or market research and sampled the remaining 261 to hit my balance targets (no label above 40%, none below 12%). Each `text` is the title followed by the whole post.
 
-**Where the posts came from:**
-
-**How I labelled them:** <!-- Cold first? Pre-labelled with AI and corrected?
-Say so plainly — the disclosure is required, not penalised. -->
+**How I labelled them:**
+- **20 cold:** I labelled these myself, with no AI help, before seeing any pre-label. Four of the 20 were replaced because I removed them as promotion or market research (Cold 7, 9, 11, 16 were redrawn). Three cold labels were changed after I re-checked them for mis-clicks, and those rows are marked `cold (corrected after click check)` in the note column.
+- **180 pre-labelled by Claude, then reviewed one by one:** I gave Claude my definitions and it assigned a label to each post. I then read every post and either agreed or changed it. My first pass changed 22 labels. A second audit of those 22 found that 15 were mis-clicks (the answer options appeared in a different order from question to question), so 7 corrections from that pass stand, plus 1 on a replacement post. The `note` column says `pre-labelled (Claude), checked` or `pre-labelled (Claude), corrected`.
+- **Caveat:** I agreed with Claude's pre-label on about 96% of posts, which could be real agreement or anchoring on its label. The 20 cold rows are my only unanchored check.
 
 **Counts per label:**
 
 | Label | Count | Share |
 |---|---|---|
-|  |  |  |
-|  |  |  |
-|  |  |  |
-| **Total** |  | 100% |
+| `GROWTH_ADVICE` | 78 | 39.0% |
+| `OPERATIONS_PEERS` | 48 | 24.0% |
+| `LEGAL_MONEY_QUESTION` | 38 | 19.0% |
+| `TOOLS_RECOMMENDATION` | 36 | 18.0% |
+| **Total** | 200 | 100% |
+
+The counts come from sampling for balance, so they do not match the natural mix of the subreddit (about 42% growth, 20% operations, 19% tools and 18% legal in my pre-labelled pool).
 
 **Three hard cases**
 
-<!-- Any post that made you pause: what it was, which two labels it could have
-     been, and what you chose. These are worth more than the easy 190. -->
-
 **1.**
-> *The post:*
+> *The post:* "EXAGGERATED MY COST. I work in a consultancy... I think I charged a large amount, which I knew that they couldn't pay easily... how do I retain them without making them feel I buckled under pressure and reduced their charges...? I asked 6k, finalised my offer to 5k, and can easily do it in 3.5k."
 >
-> *Could have been:*
+> *Could have been:* `LEGAL_MONEY_QUESTION` or `GROWTH_ADVICE` (or `OPERATIONS_PEERS`, which was the pre-label).
 >
-> *I chose, because:*
+> *I chose* `LEGAL_MONEY_QUESTION`, because the ask is about a quote and a discount on a specific deal. I did not treat it as growth because the client is not a new customer to find, but the label is a judgment call. The rule "pricing your own service is growth" would have sent it to `GROWTH_ADVICE`.
 
 **2.**
-> *The post:*
+> *The post:* "Just did my first tax return. Did my own tax for my S-corp and LLC with all the bells and whistles... Some things I learn: 'Above-the-line' deduction, R&D credits... Will I do it myself next year? Probably not."
 >
-> *Could have been:*
+> *Could have been:* `LEGAL_MONEY_QUESTION` (tax topic) or `OPERATIONS_PEERS`.
 >
-> *I chose, because:*
+> *I chose* `OPERATIONS_PEERS`, because the post asks nothing and shares an experience. My definition of `LEGAL_MONEY_QUESTION` needs a question with a definite answer. This is the case where topic and intent point to different labels.
 
 **3.**
-> *The post:*
+> *The post:* "Getting responses on bizbuysell. I understand that sellers or brokers might receive many replies to their ads, but what kind of details do buyers or brokers seek when someone answers the listing? I'm reaching out to brokers too but curious what initial message gets a response."
 >
-> *Could have been:*
+> *Could have been:* `LEGAL_MONEY_QUESTION` (buying a business) or `GROWTH_ADVICE` (what message gets a reply).
 >
-> *I chose, because:*
+> *I chose* `GROWTH_ADVICE`, because the ask is about getting a response to outreach, not about deal structure or financing. The pre-label was `LEGAL_MONEY_QUESTION` on the topic alone.
 
 ---
 
