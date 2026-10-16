@@ -51,63 +51,43 @@ whether you hit them:
 
 ---
 
-## 1.
+## 1. Overall accuracy
 
-<!-- Your criterion. It must name a number. -->
+Accuracy on the held-out test split is **at least 0.60 on each of the three seeds** (42, 7, 2024). A seed below 0.60 is a miss, even if the average is above it.
 
-
-
-**Why this target:**
-
-
+**Why this target:** Four labels means a coin-flip guesser gets 25%, and always guessing `GROWTH_ADVICE` (my largest label, about 40% of posts) gets about 40%. 0.60 is 20 points above that guess, which I'd call useful for sorting posts but not yet reliable. I'm not setting it higher because a test split of about 30 posts moves roughly nine points between seeds on noise alone.
 
 ---
 
-## 2.
+## 2. Per-label performance
 
-<!-- Your criterion. -->
+F1 on the held-out test split is **at least 0.55 for `GROWTH_ADVICE`, `OPERATIONS_PEERS` and `LEGAL_MONEY_QUESTION`, and at least 0.45 for `TOOLS_RECOMMENDATION`**, on each of the three seeds.
 
-
-
-**Why this target:**
-
-
+**Why this target:** An accuracy target can hide one label the model never learns. `TOOLS_RECOMMENDATION` is my smallest label (about 13% of posts), so only about 4 of its posts land in a 30-post test split and one miss moves its F1 a lot. That is why it gets the looser 0.45. The other three have more examples and distinct vocabulary (LLC, tax, invoice, leads), so I expect them to hold 0.55.
 
 ---
 
-## 3.
+## 3. Balance
 
-<!-- Your criterion. -->
+In `labels.csv`, **no label is more than 40% of rows and no label is less than 12%.** Checked by counting rows per label in the final file.
 
-
-
-**Why this target:**
-
-
+**Why this target:** My current 361 labelled posts are 41% `GROWTH_ADVICE` and 13% `TOOLS_RECOMMENDATION`. The 40% cap means I have to undersample `GROWTH_ADVICE` before training, so the model can't score well by leaning on it. The 12% floor keeps `TOOLS_RECOMMENDATION` at about 24 of 200 posts, enough that its test split isn't empty.
 
 ---
 
-## 4.
+## 4. Consistency
 
-<!-- Your criterion. -->
+I agree with the staff label on **at least 24 of the 30 staff posts (80%)** in `data/staff_posts.csv`, labelled under the definitions in `data/staff_taxonomy.md`, as reported by `python agreement.py`.
 
-
-
-**Why this target:**
-
-
+**Why this target:** My own labels were coded by one person, so the staff set is the only test of whether I can apply a written rule the same way someone else did. Staff picked some of the 30 posts because they're ambiguous, so 100% isn't realistic. 80% allows six disagreements, enough to argue for my reading on a few and still show I'm applying the rules consistently.
 
 ---
 
-## 5.
+## 5. Confidence
 
-<!-- Your criterion. -->
+Across the three seeds combined, test predictions with **confidence of at least 0.80 are correct at least 85% of the time.** If fewer than 10 test predictions reach 0.80 across the three seeds, this criterion is unmeasurable, which counts as a miss, not a pass.
 
-
-
-**Why this target:**
-
-
+**Why this target:** If I'd trust a confident prediction without reading the post, it has to be right more often than the model is overall (0.60 in criterion 1). I pooled the seeds because a single 30-post test split may have only a handful of predictions above 0.80. The minimum of 10 is there so a few lucky confident predictions can't pass it.
 
 ---
 
