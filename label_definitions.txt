@@ -3,7 +3,7 @@
 # Copy these from your README so the baseline is judged on exactly the
 # definitions you wrote. baseline.py reads this file.
 
-wants_plan: The poster describes their own goal or problem and asks for steps, tactics or ideas to act on, such as how to get customers, how to start something, or how to handle a situation.
-wants_answer: The poster asks for one specific item or fact, such as a recommended tool, vendor, supplier or professional, or a definite legal, tax or compliance answer.
-wants_verdict: The poster puts a specific idea, option or decision on the table and asks whether it is good, right or worth doing.
-wants_peer_input: The poster asks the community to share experiences, practices or opinions, or whether others are in the same situation, with no method, item or verdict they need to act on.
+GROWTH_ADVICE: The poster describes their own business or idea and asks for tactics, channels, a plan or a judgment about getting customers, launching, or choosing what to start, such as how to find first clients, whether a pricing, ad or business idea is worth it, or what business to begin.
+TOOLS_RECOMMENDATION: The poster asks for a named tool, software, vendor, supplier, manufacturer, platform or service professional to use, where the answer is a name or short list.
+LEGAL_MONEY_QUESTION: The poster asks a question with a definite or checkable answer about legal structure, taxes, compliance, insurance, financing or a deal, such as LLC vs S Corp, whether a permit or filing is required, a loan choice, or whether to buy or sell a business.
+OPERATIONS_PEERS: The poster vents about, or asks peers how they handle, running the business day to day, such as clients who don't pay, employees, workload, frozen payment accounts, burnout or automation, and wants shared experience rather than a named item, a rule or a growth plan.

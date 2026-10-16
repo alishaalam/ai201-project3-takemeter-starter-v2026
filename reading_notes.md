@@ -125,7 +125,7 @@ Candidate distinctions: **(1) concrete specifics vs. generic, (2) own reasoning 
 
 ## Milestone 2 addendum — how the four labels were derived
 
-The labels were coded bottom-up from a larger pull. They were not designed first.
+The posts were first coded by intent, bottom-up from a larger pull. The four intent groups were then re-cut by topic into the hybrid labels used in the README. Polls and market-research posts were removed.
 
 | Step | Count |
 |---|---|
@@ -135,27 +135,35 @@ The labels were coded bottom-up from a larger pull. They were not designed first
 | Usable text posts | 500 |
 | Dropped as promotion (49 by rule and manual check, 51 more caught while reading) | 100 |
 | Unlabelable (1x2mmhv, asks permission to ask) | 1 |
-| **Posts coded** | **399** |
+| Coded by intent | 399 |
+| Dropped as polls (`peers_poll`, 31) or market-research / lead-gen (7) | 38 |
+| **Posts labelled** | **361** |
 
-**How:** I read every remaining post (title, plus the start and end of long posts) and wrote a free-text note of what the poster wanted. Then I grouped the notes. Four groups emerged, split by what the poster does with the replies. A first keyword grouping gave 39% / 28% / 18% / 16%. Reading each group showed that "how did you get your first clients?" is asked of peers but is really a request for a method, so those moved to `wants_plan`. Final counts:
+**Step 1, intent coding.** I read every remaining post (title, plus the start and end of long posts) and wrote a free-text note of what the poster wanted. Grouping the notes gave four intent groups, split by what the poster does with the replies: `wants_plan` 156, `wants_peer_input` 110, `wants_verdict` 68, `wants_answer` 65. A first keyword grouping gave 39% / 28% / 18% / 16%. Reading each group showed that "how did you get your first clients?" is asked of peers but is really a request for a method, so those moved to `wants_plan`.
 
-| Label | Posts | Share | Children |
+**Step 2, why re-cut by topic.** Intent labels shared vocabulary. A verdict about an LLC and a verdict about an ad budget have little in common, and a classifier learns words, not intent. Sorting by what the poster is asking *for* gave four labels with their own vocabulary.
+
+| Label | Posts | Share | How it was built |
 |---|---|---|---|
-| `wants_plan` | 156 | 39.1% | `plan_start` 45, `plan_grow` 48, `plan_fix` 63 |
-| `wants_peer_input` | 110 | 27.6% | `peers_discuss` 44, `peers_shared` 35, `peers_poll` 31 |
-| `wants_verdict` | 68 | 17.0% | `verdict_choice` 52, `verdict_idea` 16 |
-| `wants_answer` | 65 | 16.3% | `answer_pick` 42, `answer_fact` 23 |
+| `GROWTH_ADVICE` | 148 | 41.0% | `plan_start`, `plan_grow`, customer- or idea-related verdicts, and a few peer posts about getting customers |
+| `OPERATIONS_PEERS` | 103 | 28.5% | `plan_fix`, vents, peer discussion and shared-experience posts about running the business |
+| `LEGAL_MONEY_QUESTION` | 62 | 17.2% | `answer_fact`, entity / loan / buy-sell verdicts, tax and insurance questions |
+| `TOOLS_RECOMMENDATION` | 48 | 13.3% | `answer_pick`, plus vendor and supplier questions from other groups |
+
+The first pass was a rule on the old child label (`answer_pick` → tools, `answer_fact` → legal, `plan_start` / `plan_grow` → growth, `plan_fix` → operations, other verdicts → growth). I then overrode 74 of the 361 posts by hand, mostly verdicts and `plan_fix` posts whose topic was legal, tools or growth.
+
+**Step 3, what was removed.** The user's rule is that polls and market-research posts are gaming the subreddit, not asking for help. That covers 31 `peers_poll` posts and 7 flagged as promo-ish, market-research or templated lead-gen (1x5r1zv, 1x4uszl, 1x4mgbc, 1x4lynu, 1x480oh, 1x1uv0c, 1x6l0ik). Six posts flagged only "promo-light" stayed (1x78tus, 1x6zwfo, 1x6cita, 1x5jsuh, 1x4u8j0, 1x43dqw).
 
 **Trade-offs and flags**
-- `wants_plan` at 39.1% is the mild imbalance you accepted, just under the 40% ceiling. The smallest label, `wants_answer`, is 16.3%, about 33 of 200 posts.
-- Intent is a harder distinction to label consistently than topic. I coded alone, so the unit 6 agreement check is the first test of that.
-- The child split was made after the fact. 27 posts had their child corrected by hand after a keyword pass, so children are less reliable than parents.
+- `GROWTH_ADVICE` is 41.0%, just over the 40% ceiling. The smallest label, `TOOLS_RECOMMENDATION`, is 13.3%, about 27 of 200 posts.
+- Intent is a harder distinction to label consistently than topic, but topic labels here still depend on judgment (is "how do I price a service" growth or money?). I labelled alone, so the unit 6 agreement check is the first test.
+- Verdict posts are spread over all four labels (41 growth, 18 legal, 5 operations, 4 tools). Intent is no longer its own label.
+- The poll removal was done as a group, so some genuine polls went with the market-research ones. "Promo-light" posts remain and may still hide some lead-gen.
 - Some intents are inferred. 1x6c16w and 1x3nag0 state no ask, and I inferred one. A second reader could infer a different ask.
-- 30 of the 399 are market-research-style polls or carry a "promo-ish" note from my reading, and 2 templated posts (1x6l0ik, 1x1uv0c) may be disguised lead-gen. I kept them and flagged them. Most are `wants_peer_input` (`peers_poll`), so that child is the one most exposed to hidden promotion.
-- The pulled pool is in my scratchpad, not the repo, as you asked. Milestone 4 needs a fresh pull of the same shape.
+- The pulled pool and the label file are in my scratchpad, not the repo. Milestone 4 needs a fresh pull of the same shape.
 
 ## Open Questions
 
 - Should the six repost pairs be collapsed to one post each in Milestone 4, or kept out of the same split?
 - Do you want the two French posts (1x3a612, 1x39qys) kept? The model is English-trained.
-- Is the 39.1% `wants_plan` share acceptable, or should Milestone 4 undersample it?
+- Should `GROWTH_ADVICE` be undersampled in Milestone 4, or split (for example, start-a-business vs get-customers)?
