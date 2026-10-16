@@ -188,19 +188,25 @@ The counts come from sampling for balance, so they do not match the natural mix 
 
 ## The Training Run
 
-<!-- Your starting model, your settings, and anything you changed and why. -->
+**Base model:** `distilbert-base-uncased`, fine-tuned for 4-way classification. I trained on Apple Silicon (`mps`), PyTorch 2.14.1. `results.json` records the device.
 
-**Base model:**
+**Settings:** 3 epochs, learning rate 2e-5, batch size 16, 128 tokens per post, seed 42.
 
-**Settings:** <!-- epochs, learning rate, batch size, seed -->
+**Anything I changed from the defaults, and why:** Nothing. I only set `LABELS` to my four labels. I ran the notebook's section 1 to 5 cells as a script with the project `.venv` Python, so the notebook file has no saved outputs for this run.
 
-**Anything I changed from the defaults, and why:**
+**Split sizes:** train 139, val 31, test 30 (stratified 70/15/15).
 
-**Split sizes:** <!-- train / val / test, and per-label counts in the test
-split. If a label had fewer than about 8 in test, say so — it explains a lot
-of next unit's variance. -->
+| Label | Train | Val | Test |
+|---|---|---|---|
+| `GROWTH_ADVICE` | 54 | 12 | 12 |
+| `TOOLS_RECOMMENDATION` | 25 | 6 | 5 |
+| `LEGAL_MONEY_QUESTION` | 26 | 6 | 6 |
+| `OPERATIONS_PEERS` | 34 | 7 | 7 |
 
-
+**Notes for next unit:**
+- Three labels have fewer than 8 test posts (`TOOLS_RECOMMENDATION` 5, `LEGAL_MONEY_QUESTION` 6, `OPERATIONS_PEERS` 7). Their per-label F1 will move a lot between seeds.
+- The model reads only the first 128 tokens. The median post is 144 tokens, and 115 of the 200 posts are longer, so the end of those posts (where the ask often sits) is cut off.
+- I have not read the results closely. A first look shows that the model predicted `GROWTH_ADVICE` for every one of the 30 test posts, so accuracy equals the share of `GROWTH_ADVICE` in the test split (0.40). I'll diagnose that in unit 6.
 
 ---
 
