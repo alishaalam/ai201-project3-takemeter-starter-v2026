@@ -39,7 +39,7 @@
 
 ## What This Does
 
-r/smallbusiness is a public community where owners and would-be owners ask each other for help. This classifier reads one text post and sorts it with a **hybrid label**: the topic the post is about *and* what the poster wants the replies to do. A post about getting customers and a post about taxes land in different labels because they use different words and ask for different things. Deleted posts, ads, "[For Hire]" posts, self-promotion and market-research polls are removed before labelling, because they ask nothing of the community and are gaming the subreddit for answers or leads. The labels started as four intent-only labels coded bottom-up from 399 posts from an 8-day pull (361 after removing polls and market research) (9–16 Oct 2026). They were then re-cut by topic, because intent alone gave labels with little vocabulary of their own.
+r/smallbusiness is a public community where owners and would-be owners ask each other for help. This classifier reads one text post and sorts it with a **hybrid label**: the topic the post is about *and* what the poster wants the replies to do. A post about getting customers and a post about taxes land in different labels because they use different words and ask for different things. Deleted posts, ads, "[For Hire]" posts, self-promotion and market-research polls are removed before labelling, because they ask nothing of the community and are gaming the subreddit for answers or leads. The labels started as four intent-only labels coded bottom-up from 399 posts from a pull of 9–16 Oct 2026 (361 after removing polls and market research). They were then re-cut by topic, because intent alone gave labels with little vocabulary of their own. The final training set is 200 posts from a separate pull (25 Sep–8 Oct 2026), fine-tuned on `distilbert-base-uncased`.
 
 ---
 
@@ -212,26 +212,24 @@ The counts come from sampling for balance, so they do not match the natural mix 
 
 ## How I Used AI
 
-<!-- Two specific moments — what you asked, what came back, what you changed.
+**Moment 1: proposing the taxonomy**
 
-     ⚠️ Plus disclosure of any pre-labelling. If you had a model pre-label a
-     batch and then read and corrected every one, say that. It's an allowed
-     workflow and disclosing it costs you nothing. Not disclosing it is the
-     problem. -->
+- *What I asked for:* I had Claude analyze my r/smallbusiness posts and propose a four-category hybrid taxonomy that combined topic and intent, with a name, strict definition, vocabulary and an edge-case rule for each category.
+- *What came back:* Four labels (`GROWTH_ADVICE`, `TOOLS_RECOMMENDATION`, `LEGAL_MONEY_QUESTION`, `OPERATIONS_PEERS`) with vocabulary lists from a keyword analysis. It estimated `GROWTH_ADVICE` at about 45%, which was over my 40% ceiling.
+- *What I changed:* I asked for the posts to be hand-labelled against the new definitions, and that gave `GROWTH_ADVICE` at 38.8%, so the keyword estimate was wrong. I replaced my intent labels with the hybrid labels. I also decided that polls and market-research posts were gaming the subreddit and had Claude remove them, along with promotion (38 posts from the taxonomy pool, then more from the final pull).
 
-**Moment 1**
+**Moment 2: the pre-label review and the blind re-label**
 
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
-
-**Moment 2**
-
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+- *What I asked for:* I had Claude pre-label 180 posts under my definitions and show them to me one at a time, so I could confirm or correct each. Later I asked for a blind re-label of 20 of the posts I had agreed with, with no pre-label shown.
+- *What came back:* Claude's labels agreed with mine on about 96% of the posts. My first pass changed 22 labels, and when Claude asked me to re-check them, 15 turned out to be mis-clicks because the answer options changed order from one question to the next. The blind re-label matched the committed label on only 12 of 20 (60%). Posts had been shortened in the review prompts, and some short posts had no clear ask.
+- *What I changed:* I fixed the mis-clicks and kept the remaining 7 corrections. I kept the labels as they were instead of re-reviewing them, and I documented the 60% result and the truncation problem in the Dataset section. I told Claude to summarize long posts in future instead of cutting them off.
 
 **Pre-labelling disclosure:**
+
+- **The 180 pre-labelled rows in `labels.csv`** were labelled first by Claude, from each post's title plus roughly its first 230 characters, and then reviewed by me one at a time. They are marked `pre-labelled (Claude), checked` (172) or `pre-labelled (Claude), corrected` (8) in the `note` column. Part of my review was on shortened text, as described in the Dataset section.
+- **The 20 cold rows** were labelled by me with no AI help and are marked `cold`. Three of them were corrected after a click check and are marked `cold (corrected after click check)`. Four were redrawn after I removed promotion or market-research posts.
+- **Posts used to derive the taxonomy:** Claude read and grouped the 399 posts from the earlier pull to find the intent groups (see `reading_notes.md`). Those posts are not in `labels.csv`.
+- **Code and filtering:** Claude pulled the posts from the Arctic Shift API, wrote the filtering, and ran the notebook cells for the training run. The numbers in `results.json` come from that run.
 
 <!-- ═══════════════════════ UNIT 6 — THE TEST ═══════════════════════
 
