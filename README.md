@@ -61,7 +61,7 @@ Four labels in `TOPIC_INTENT` form. The classifier trains on these only.
 
 ### `GROWTH_ADVICE`
 
-**Definition:** The poster describes their own business or idea and asks for tactics, channels, a plan or a judgment about getting customers, launching, or choosing what to start. "Is this idea / pricing / ad spend worth it?" belongs here when the subject is acquiring customers.
+**Definition:** The poster describes their own business or idea and asks for tactics, channels, a plan or a judgment about getting customers, launching, or choosing what to start, such as how to find first clients, whether a pricing, ad or business idea is worth it, or what business to begin.
 
 **Vocabulary:** first customers, first clients, leads, get clients, promote, marketing, ads, Meta, Instagram, launch, validate, niche, side business, business idea, scale, "how do I get", "where do I start".
 
@@ -72,7 +72,7 @@ Four labels in `TOPIC_INTENT` form. The classifier trains on these only.
 
 ### `TOOLS_RECOMMENDATION`
 
-**Definition:** The poster wants a named product, vendor, supplier, manufacturer, platform or service professional. The answer is a name or a short list.
+**Definition:** The poster asks for a named tool, software, vendor, supplier, manufacturer, platform or service professional to use, where the answer is a name or short list.
 
 **Vocabulary:** recommend, recommendations, best, supplier, manufacturer, wholesale, bulk, software, app, platform, POS, CRM, scheduling, "looking for", "reliable".
 
@@ -82,7 +82,7 @@ Four labels in `TOPIC_INTENT` form. The classifier trains on these only.
 
 ### `LEGAL_MONEY_QUESTION`
 
-**Definition:** The poster asks something with a definite or checkable answer about legal structure, taxes, compliance, financing or a deal. That includes "X or Y?" when X and Y are legal or financial structures, and buy / sell / loan decisions.
+**Definition:** The poster asks a question with a definite or checkable answer about legal structure, taxes, compliance, insurance, financing or a deal, such as LLC vs S Corp, whether a permit or filing is required, a loan choice, or whether to buy or sell a business.
 
 **Vocabulary:** LLC, S Corp, sole proprietor, EIN, permit, license, trademark, liability, insurance, tax, loan, line of credit, SBA, lease, buyout, valuation, equity, "do I have to".
 
@@ -93,7 +93,7 @@ Four labels in `TOPIC_INTENT` form. The classifier trains on these only.
 
 ### `OPERATIONS_PEERS`
 
-**Definition:** The poster vents about, or asks peers about, running the business day to day: payments and invoices, clients who don't pay, employees, workload, account freezes, burnout and automation, where the poster has a situation of their own. The post wants shared experience or a way to cope, with no named item, rule or growth plan to act on.
+**Definition:** The poster vents about, or asks peers how they handle, running the business day to day, such as clients who don't pay, employees, workload, frozen payment accounts, burnout or automation, and wants shared experience rather than a named item, a rule or a growth plan.
 
 **Vocabulary:** anyone else, how do you handle, invoice, won't pay, employee, hire, burnout, schedule, workflow, automate, processor, account frozen, Square, Stripe, Wise, "has anyone".
 
@@ -252,6 +252,8 @@ Both models were scored on the same 30 posts in `test_split.csv`. The baseline i
 | F1 — `TOOLS_RECOMMENDATION` | 0.333 | 0.000 | -0.333 |
 
 **What I predicted before I looked:** I predicted that the baseline would get at least 50% of the posts right. I wrote this after I had seen my trained model's numbers (accuracy 0.40, every post predicted as `GROWTH_ADVICE`) but before I saw any baseline number, so it is a prediction about the baseline and not about where training would win. The baseline got 0.567 (17 of 30), so the prediction held, by a margin of two posts.
+
+**What my definitions were worth:** I also ran the baseline with bare label names and no definitions (`baseline_bare_results.json`). With the definitions it scored 0.567 accuracy and 0.414 macro F1. With bare names it scored 0.333 accuracy and 0.320 macro F1. So the definitions were worth about 23 points of accuracy. The table above is the run with definitions, and that is the baseline I am reporting. Bare names did better on `OPERATIONS_PEERS` (F1 0.308 against 0.000), but that is 7 posts, so I don't read much into it.
 
 **What the gap actually means:** My fine-tuning added nothing over the baseline in this run. The trained model is worse on accuracy, on macro F1 and on three of four labels, and it ties at zero on `OPERATIONS_PEERS`. The baseline can spread its guesses across the labels using only my definitions, while the trained model collapsed to one label. With 30 test posts, one post is 3.3 points of accuracy, and three labels have fewer than 8 test posts, so these gaps are noisy. The baseline also scores 0.000 on `OPERATIONS_PEERS`, the label I found hardest to separate from `LEGAL_MONEY_QUESTION` when I re-labelled. I'll test whether the gap holds across three seeds before drawing conclusions.
 
