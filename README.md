@@ -261,34 +261,32 @@ Both models were scored on the same 30 posts in `test_split.csv`. The baseline i
 
 ## Run Log — Before
 
-<!-- Five criteria across three seeds. The notebook's section 6 prints the
-     spread table; the Target and Verdict columns are yours. -->
+Three seeds (42, 7, 2024), 3 epochs, learning rate 2e-5, batch size 16, 128 tokens, on Apple Silicon (`mps`), PyTorch 2.14.1. Raw numbers are in `results_three_seeds_before.json`. Seed 42 reproduces the earlier `results.json`. The verdicts below are my reading of the numbers against the targets in `criteria.md`; the diagnoses come in the next section.
 
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
 |---|---|---|---|---|---|
-| 1.  |  |  |  |  |  |
-| 2.  |  |  |  |  |  |
-| 3.  |  |  |  |  |  |
-| 4.  |  |  |  |  |  |
-| 5.  |  |  |  |  |  |
+| 1. Accuracy | at least 0.60 on every seed | 0.400 | 0.400 | 0.400 | MISSED |
+| 2. Per-label F1 | at least 0.55 for `GROWTH_ADVICE`, `OPERATIONS_PEERS`, `LEGAL_MONEY_QUESTION`; at least 0.45 for `TOOLS_RECOMMENDATION` | `GROWTH_ADVICE` 0.571, other three 0.000 | `GROWTH_ADVICE` 0.571, other three 0.000 | `GROWTH_ADVICE` 0.571, other three 0.000 | MISSED |
+| 3. Balance | no label above 40% or below 12% of `labels.csv` | 39.0% / 18.0% | same file | same file | MET |
+| 4. Consistency | at least 24 of 30 agreement with staff | not run yet | not run yet | not run yet | open until the agreement report |
+| 5. Confidence | at least 85% right for predictions with confidence of 0.80 or more, with at least 10 such predictions | none can reach 0.80 (mean confidence 0.34 to 0.38) | same | same | MISSED (unmeasurable) |
+
+**Spread:** accuracy, macro F1 and every per-label F1 are identical across the three seeds (spread 0.000). The notebook calls that "stable enough to trust", but here it means the model made the same mistake on every seed: it predicted `GROWTH_ADVICE` for every test post. Stratified splits put 12 `GROWTH_ADVICE` posts in each 30-post test split, so predicting that label always gives 0.40 on every seed. A spread of zero here is not a stable measure of learning, only of the same collapse.
+
+**Confidence check (criterion 5):** the saved results hold confidence by thirds, not every prediction. The model's mean confidence was 0.34 to 0.38, close to the 0.25 of a four-way guess, so no prediction can plausibly reach 0.80. Under my own rule that makes the criterion unmeasurable, which counts as a miss.
 
 ### Confusion matrix
 
-<!-- ⚠️ TYPED AS A MARKDOWN TABLE. The notebook prints one ready to paste.
-     An image of a matrix earns nothing. -->
+This is the seed 42 matrix (the notebook builds it from the first seed). Rows are true labels, columns are the model's guesses.
 
-| true \ predicted |  |  |  |
-|---|---|---|---|
-| **** |  |  |  |
-| **** |  |  |  |
-| **** |  |  |  |
+| true \ predicted | GROWTH_ADVICE | TOOLS_RECOMMENDATION | LEGAL_MONEY_QUESTION | OPERATIONS_PEERS |
+|---|---|---|---|---|
+| **GROWTH_ADVICE** | 12 | 0 | 0 | 0 |
+| **TOOLS_RECOMMENDATION** | 5 | 0 | 0 | 0 |
+| **LEGAL_MONEY_QUESTION** | 6 | 0 | 0 | 0 |
+| **OPERATIONS_PEERS** | 7 | 0 | 0 | 0 |
 
-**My biggest off-diagonal number, and what it means:**
-<!-- Not "the model made mistakes" — WHICH boundary it didn't learn, and which
-     direction. "7 real analysis posts were called hot_take and only 3 went the
-     other way" is a direction, not just an error rate. -->
-
-
+**My biggest off-diagonal number, and what it means:** The biggest cell is 7 real `OPERATIONS_PEERS` posts called `GROWTH_ADVICE`, with 0 going the other way. That direction is not evidence about the boundary between those two labels, because all 18 posts from the other three labels also went to `GROWTH_ADVICE`. The model did not learn any boundary. It learned to always answer the biggest label, and `OPERATIONS_PEERS` shows the largest number only because it is the largest of the three labels that were never predicted.
 
 ---
 
