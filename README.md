@@ -253,6 +253,16 @@ Both models were scored on the same 30 posts in `test_split.csv`. The baseline i
 
 **What I predicted before I looked:** I predicted that the baseline would get at least 50% of the posts right. I wrote this after I had seen my trained model's numbers (accuracy 0.40, every post predicted as `GROWTH_ADVICE`) but before I saw any baseline number, so it is a prediction about the baseline and not about where training would win. The baseline got 0.567 (17 of 30), so the prediction held, by a margin of two posts.
 
+**Baseline on all three seeds:** The table above is seed 42. Each seed holds out a different 30 posts, so I also scored the baseline on the seed 7 and seed 2024 test sets (`test_split_seed7.csv`, `test_split_seed2024.csv`, `baseline_results_seed7.json`, `baseline_results_seed2024.json`). I rebuilt those two sets with the notebook's own split function, without retraining. The trained model scored 0.400 on every seed.
+
+| Seed | Baseline accuracy | Baseline macro F1 | Trained accuracy | Trained macro F1 |
+|---|---|---|---|---|
+| 42 | 0.567 | 0.414 | 0.400 | 0.143 |
+| 7 | 0.500 | 0.328 | 0.400 | 0.143 |
+| 2024 | 0.567 | 0.414 | 0.400 | 0.143 |
+
+The baseline beats the trained model on accuracy and macro F1 on all three seeds, by 10 to 17 points of accuracy. Its own accuracy moves by 6.7 points across the seeds (0.500 to 0.567), under the ten points the notebook treats as unstable, so 0.567 on seed 42 was a slightly friendly draw but not a fluke. Seeds 42 and 2024 give identical baseline numbers on different posts (the two test sets share only 3 posts), which I take to be a coincidence of counts. On seed 7 the baseline got `OPERATIONS_PEERS` and `TOOLS_RECOMMENDATION` all wrong (F1 0.000), so its weakness on those two labels is not specific to one split.
+
 **What my definitions were worth:** I also ran the baseline with bare label names and no definitions (`baseline_bare_results.json`). With the definitions it scored 0.567 accuracy and 0.414 macro F1. With bare names it scored 0.333 accuracy and 0.320 macro F1. So the definitions were worth about 23 points of accuracy. The table above is the run with definitions, and that is the baseline I am reporting. Bare names did better on `OPERATIONS_PEERS` (F1 0.308 against 0.000), but that is 7 posts, so I don't read much into it.
 
 **What the gap actually means:** My fine-tuning added nothing over the baseline in this run. The trained model is worse on accuracy, on macro F1 and on three of four labels, and it ties at zero on `OPERATIONS_PEERS`. The baseline can spread its guesses across the labels using only my definitions, while the trained model collapsed to one label. With 30 test posts, one post is 3.3 points of accuracy, and three labels have fewer than 8 test posts, so these gaps are noisy. The baseline also scores 0.000 on `OPERATIONS_PEERS`, the label I found hardest to separate from `LEGAL_MONEY_QUESTION` when I re-labelled. I'll test whether the gap holds across three seeds before drawing conclusions.

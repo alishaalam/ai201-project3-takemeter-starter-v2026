@@ -1,0 +1,190 @@
+{
+  "model": "facebook/bart-large-mnli",
+  "n": 30,
+  "seed": 42,
+  "held_out": true,
+  "used_definitions": true,
+  "scores": {
+    "n": 30,
+    "accuracy": 0.5666666666666667,
+    "f1_macro": 0.41372549019607846,
+    "per_label": {
+      "GROWTH_ADVICE": {
+        "precision": 0.6111111111111112,
+        "recall": 0.9166666666666666,
+        "f1": 0.7333333333333334,
+        "support": 12
+      },
+      "LEGAL_MONEY_QUESTION": {
+        "precision": 0.45454545454545453,
+        "recall": 0.8333333333333334,
+        "f1": 0.5882352941176471,
+        "support": 6
+      },
+      "OPERATIONS_PEERS": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 7
+      },
+      "TOOLS_RECOMMENDATION": {
+        "precision": 1.0,
+        "recall": 0.2,
+        "f1": 0.33333333333333337,
+        "support": 5
+      }
+    }
+  },
+  "predictions": [
+    {
+      "text": "Any advise on what business it would be?\n\nWell skilled in Procurement,  AR, knowing there is a huge bottleneck in unmatched invoices. What kind of business would be to help small and medium size companies? Would this kind of help in demand? Any advise?",
+      "gold": "GROWTH_ADVICE",
+      "predicted": "LEGAL_MONEY_QUESTION"
+    },
+    {
+      "text": "I\u2019m starting an apparel business from scratch \u2014 what would you focus on first?\n\nI recently started building **Just V Apparel**, an independent T-shirt and hoodie brand based around my artwork.\n\nRight now I\u2019m working on figuring out the hardest part: getting people to actually discover a new brand.  \nFor those who have built a small product-based business, what was the first thing that actually helped you get your first customers?\n\nI\u2019m interested in hearing what worked for you \u2014 especially things that didn\u2019t require a huge advertising budget.",
+      "gold": "GROWTH_ADVICE",
+      "predicted": "GROWTH_ADVICE"
+    },
+    {
+      "text": "Clothing Brand.\n\nI have an idea for a new item that I want for my children but cannot find anywhere to buy - i figured, why not make and sell them?\n\nHowever, I am so confused!\n\nDoes anyone own a clothing brand with items that have been designed entirely rather than just manufacturers stock standard items that have been personalised?\n\nWould love advice on manufacturers that can make this happen for me!",
+      "gold": "GROWTH_ADVICE",
+      "predicted": "GROWTH_ADVICE"
+    },
+    {
+      "text": "Are there possible tax ramifications if I\u2026\n\nHello everyone. I travel every 90 days more or less for work, one state at a time. My base is Florida but due to work I tend to be across any of the 50 states. I wish to sell a product online that would require me to check the quality of the product before I ship it out. The product would arrive from the supplier to me and then I will be shipping it out to my customers. If my business is legally based in Florida, what possible issues may I run into if I were to work in another state shipping my products out? It is a side business.. It will be set up under an LLC. Basically my business setup will go wherever I go\u2026\n\nThanks",
+      "gold": "LEGAL_MONEY_QUESTION",
+      "predicted": "LEGAL_MONEY_QUESTION"
+    },
+    {
+      "text": "What would you prioritize if you had $500 to start an online store?\n\nI started my shop with pretty much nothing and dumped the first $200 into Meta adds bc I panicked about traffic. I can see now what a huge waste that was. My site was still running the default template with the placeholder banner image and no amount of boosting a post was going to fix that. Im not saying I know now where that first budget should\u2019ve gone, tbh not feeling like I\u2019m making much ground with what i have as it si. I get that adds get you past the fishing line for traffic but is there stuff that gets you to the fishing line in the first place?",
+      "gold": "GROWTH_ADVICE",
+      "predicted": "GROWTH_ADVICE"
+    },
+    {
+      "text": "Help! my CEO brother does job for his own employees working 80-hours weeks for years. Any management courses?\n\nThe title says it. My brother who is in tech and has a phd has a small tech firm; he\u2019s the main driving force in development and marketing. He is excellent in this, but doesn\u2019t manage his employees properly. They got used to that and got extremely lazy. Example: employees coming to work at 11 am leaving at 4 pm; client complaining on zoom call that an employee did nothing in the past billing cycle!  No joke. At some point, my bother started routinely picking up the slack and finishing up the job that is his employees\u2019 responsibility! He works 6 am to 12 am (with some breaks) plus weekends for over two years now, this is not an exaggeration. It\u2019s a cry for help! I\u2019ve been telling him he needs to impose productivity requirements on his employees and track those, ensuring nobody falls behind. He said he can\u2019t do more work at this point, which is not going to improve his situation. Any management courses you would recommend? Any other recommendations?",
+      "gold": "OPERATIONS_PEERS",
+      "predicted": "GROWTH_ADVICE"
+    },
+    {
+      "text": "Looking for a US 3PL recommendation: Shopify integration, multichannel (TikTok Shop, Amazon), small volume\n\nI'm launching a new e-commerce brand in the US and I'm looking for a 3PL/warehouse recommendation. I'm based outside the US, so I'd handle everything remotely.\n\n**What I need:**\n\n* Receive my imported inventory (shipping from Asia)\n* Store it and fulfill orders\n* Integration with Shopify\n* Also connects with TikTok Shop and Amazon (MCF or FBA prep), ideally Walmart later\n* Works with small volumes at the start, no huge minimums\n* Good dashboard and support, since I'll be managing everything online\n* Bonus if they can help with or recommend a customs broker for the import side\n\n**Which 3PLs have you worked with that are startup-friendly and actually reliable?** Also curious about rough pricing (receiving, storage, pick & pack) and any red flags to watch out for.\n\n**Thanks in advance!**",
+      "gold": "TOOLS_RECOMMENDATION",
+      "predicted": "GROWTH_ADVICE"
+    },
+    {
+      "text": "Doubt- would you buy your brand domain first?\n\nhi guys,  \none doubt, if you are starting an online bussiness, would you buy domain under your brand name first, or use the free domain given by the store builder and later buy your domain",
+      "gold": "GROWTH_ADVICE",
+      "predicted": "GROWTH_ADVICE"
+    },
+    {
+      "text": "Accountant quits tomorrow can you still access your books?\n\nHappened to us last week. accountant left after 6 years, fair enough. turns out all data was on his desktop, backup pendrive went home with him and gst otp was coming on HIS number\n\ngot everything back in 3 days but man how do you guys set up access so this doesnt happen",
+      "gold": "OPERATIONS_PEERS",
+      "predicted": "LEGAL_MONEY_QUESTION"
+    },
+    {
+      "text": "PEOs for Small Business Healthcare\n\nHi, as many of you are probably aware, the cost of health insurance has skyrocketed. I\u2019ve been approached by brokers offering PEO plans for health insurance, and they\u2019re claiming they could save us around $50,000 a year compared with our current plan.\n\nI haven\u2019t sat through the proposal yet, but we have a meeting next week. Before I do, I\u2019d love to hear from anyone who has made the switch from a traditional small business health plan to a PEO.\n\nWhat was your experience? Were the savings actually what you expected, and were there any surprises with costs, coverage, renewals, administration, or employee experience?\n\nI\u2019d also love to know what questions you wish you had asked before signing.",
+      "gold": "LEGAL_MONEY_QUESTION",
+      "predicted": "LEGAL_MONEY_QUESTION"
+    },
+    {
+      "text": "Business Owners: STAY AWAY from Hibu Marketing. Consider this your warning.\n\n**Business Owners: STAY AWAY from Hibu Marketing. Consider this your warning.**  \nI cannot believe how absolutely awful my experience with Hibu has been. If you\u2019re a small business owner considering them, PLEASE do your homework before signing anything.  \nThe salesperson told me everything I wanted to hear to get my signature. I specifically requested $3,000/month toward Google Ads. I was told 100% would go toward advertising because Hibu \u201cmakes their money elsewhere.\u201d Turns out only about $1,500 was actually allocated to Google Ads, with the rest going toward other services.  \nI was also told I could change my Google Ads budget at any time. That turned out to be another promise that wasn\u2019t honored.  \nAnd their supposedly \u201ccustom\u201d websites? I discovered another auto repair shop IN MY SAME CITY, with the SAME SALESPERSON, had essentially the same website, right down to the stock photo!  \nI\u2019ve had TWO website services canceled and an SEO package terminated after numerous issues.  \nThe incompetence and lack of communication have been unbelievable. In my experience, if you actually care about your business, plan on babysitting everything, catching mistakes yourself, and doing the work you\u2019re supposedly paying these people to handle.  \nHere\u2019s the part that absolutely blows my mind.  \n**I FIRED THEM. I hired another company. I told Hibu to stop advertising my business. I even sent a cease-and-desist.**  \nTheir response? They refuse to terminate my Google Ads contract. Instead, they\u2019ve repeatedly offered me credits toward services I have made abundantly clear I DO NOT WANT.  \n**It\u2019s MY business. MY reputation. And I no longer want this company representing either one.**  \nI\u2019ve never encountered a company so determined to hold on to an unhappy customer rather than simply part ways.  \nI\u2019m sharing my experience because I wish someone had warned me before I signed. Get EVERY sales promise in writing, demand a breakdown of where every advertising dollar goes, and read the cancellation terms carefully.  \n**My experience with Hibu has been an absolute nightmare. Other small business owners deserve to know what they\u2019re potentially signing up for.**",
+      "gold": "OPERATIONS_PEERS",
+      "predicted": "GROWTH_ADVICE"
+    },
+    {
+      "text": "UG vs GmbH in Germany: what I wish I knew before choosing\n\nFor anyone starting a company in Germany:\n\n* **UG (haftungsbeschr\u00e4nkt):** start with \u20ac1 of capital, but you must put 25% of each year's profit into a reserve until you reach \u20ac25,000.\n* **GmbH:** \u20ac25,000 share capital, at least \u20ac12,500 paid in at formation.\n* **Same law, same liability protection.** A UG is legally a GmbH variant.\n* **Both need a notary** to form and to change shareholders (online video notarisation now exists).\n* **You can convert** a UG into a GmbH later by increasing capital to \u20ac25,000.\n\nWhen I'd pick which:\n\n* UG if you're starting lean and testing\n* GmbH if customers or lenders will check your capital, or you're raising soon\n\nThings to set up on day one, whichever you choose: a written IP assignment from each founder, a simple shareholder agreement, and a tax adviser who knows startups.\n\nDid anyone get treated differently by customers or banks for being a UG?",
+      "gold": "LEGAL_MONEY_QUESTION",
+      "predicted": "LEGAL_MONEY_QUESTION"
+    },
+    {
+      "text": "What\u2019s an easy to implement manufacturing ERP for small businesses that want to start with inventory?\n\nHas anyone moved from Fishbowl to MRPeasy for a small manufacturing operation? Fishbowl kept coming up when I searched for inventory software, but setup has taken longer than expected, and we\u2019re still dealing with sync issues between inventory and our accounting software after two months of support emails and calls.\n\nWe\u2019re considering MRPeasy and would love to hear how it\u2019s worked for others. How easy was the setup, and how well does it handle bills of materials and stock updates when you start a production order? Has the per-user pricing worked out reasonably for a small team?",
+      "gold": "TOOLS_RECOMMENDATION",
+      "predicted": "TOOLS_RECOMMENDATION"
+    },
+    {
+      "text": "Small alt jewelry and accessories business, struggling with pricing\n\nI made some gothic chokers that are a mix of hand beading, hand sewing, and machine sewing. I want to sell them for $50 but I\u2019m worried that\u2019s unrealistic, that I\u2019m over or underselling myself. Is 50 a good price?",
+      "gold": "GROWTH_ADVICE",
+      "predicted": "GROWTH_ADVICE"
+    },
+    {
+      "text": "I freelanced for a company (Group 8A) and they won\u2019t pay, what now?\n\nThis digital marketing agency has been awful the whole time I\u2019ve been here, with the owner often belittling minorities he hired from other countries for cheap. Anyways, after I put my 2 weeks in they stopped paying me and they haven\u2019t paid me for the last 2 months of work. Is my only recourse through small claims court?",
+      "gold": "OPERATIONS_PEERS",
+      "predicted": "LEGAL_MONEY_QUESTION"
+    },
+    {
+      "text": "$150k capital to invest, what to do?\n\nSo, I\u2019ve come into $150k from an inheritance, I want to invest in a business that I can own, develop and build. I don\u2019t have any business management experience, starting from scratch here. \n\nAnother wrinkle: I\u2019m a single parent of 3 kids so a super heavy grind of 18 hour days isn\u2019t really an option.\n\nI\u2019ve thought about, say, vending machines where I could turn some investment into some profit without spending 80 hours a week making it happen.\n\nAny thoughts? I\u2019d love to hear ideas on what I can do to build this money into an income. Thank you!",
+      "gold": "GROWTH_ADVICE",
+      "predicted": "GROWTH_ADVICE"
+    },
+    {
+      "text": "Vat question on sales outside UK\n\nHi all, I am based in the uk and run a dropshipping (print on demand) website. Most sales are to US customers and are therefore shipped directly from US print shops.\n\nAs I live in the UK do these sales still count towards my UK vat threshold? \n\nSomeone reassure me please :)",
+      "gold": "LEGAL_MONEY_QUESTION",
+      "predicted": "GROWTH_ADVICE"
+    },
+    {
+      "text": "need some help understanding something\n\nWe\u2019re struggling with organic content right now.  \nThe brand itself is doing pretty well, but Instagram is honestly a mess. We\u2019re posting inconsistently, most of our content is basically product-focused, and whenever we try reels, the views are all over the place.\n\nFor people actually running D2C brands:  \nAre you doing organic content yourself?  \nDo you have an in-house person?  \nFreelancer?  \nAgency?  \nOr are you just figuring it out as you go?  \nAnd if you\u2019re working with an agency, what exactly do they handle for you?\n\nStrategy + ideas, scripting, shooting, editing, posting, influencers/UGC, etc.?  \nI\u2019m trying to understand what a good D2C content setup actually looks like because there\u2019s a ridiculous amount of conflicting advice online.",
+      "gold": "GROWTH_ADVICE",
+      "predicted": "GROWTH_ADVICE"
+    },
+    {
+      "text": "Where to register DBA\n\nHi!  I am planning to start a business as a sole proprietor.  I don't want my home address listed, so I purchased a virtual business address with a physical location through a registered agent.  As an unincorporated entity, I'm required to register the DBA (Doing Business As) form with the county clerk.  The only issue is that the virtual address is physically in a different county than I am located, and where I would actually be operating out of.  Do I file with my county clerk, the virtual business address county clerk, or both?",
+      "gold": "LEGAL_MONEY_QUESTION",
+      "predicted": "LEGAL_MONEY_QUESTION"
+    },
+    {
+      "text": "payment processing for a small e-commerce site is killing me, what are you guys using?\n\nI run a small independent site selling handmade jewelry. just me, no team. site went live a while back and once orders actually started coming in I realized my payment setup is kind of a mess. the processing fees on my current payment API are way higher than I expected, and the whole flow after that is painful too. feels like I'm losing money just trying to receive money. anyone running a small e-commerce site found a payment provider that's actually affordable and doesn't make you jump through hoops to get your money out? what are you using?",
+      "gold": "TOOLS_RECOMMENDATION",
+      "predicted": "GROWTH_ADVICE"
+    },
+    {
+      "text": "Employee issue\n\nHello fellow small business owners. \n\nI have an employee who recently has been exhibiting unusual behaviours. \n\nShe's been with me since March 2026 and is actually very good at her job. Recently she has been calling off a lot saying she's sick which I believed and allowed her to take the days off. \n\nToday she texted me saying she's been throwing up all weekend and she needs to stay at home today ( Monday ) \n\nWhich I said okay \ud83d\udc4d hope you feel better \n\nI then went about my day and had to run some errands - I stopped in at a coffee shop in the area and as I was walking toward the coffee shop I saw her sitting there with the company lap top open just kind of chilling. \n\nI did not enter the coffee shop and just left. \n\nA few things that are going through my head right now \n\n1. It's odd that she claimed to be sick and couldn't come to work and is now sitting at a coffee shop \n\n2. Why is she sitting there with the company lap top open if she has taken the day off \n\n3. Could she be sick and just chilling and resting but at a coffee shop ? Whenever I am sick I stay home , but that just might be me. \n\nNot sure how to handle this one- we generally get along quite well and I don't want to accuse anyone of lying. She is good at her job when she is actually there so I wouldn't want to burn the relationship because I saw her in a coffee shop when she didn't come into work that day. \n\nThe frequency of the calling off is concerning me - is she working another remote job ? Is she overwhelmed by her tasks at my business and needs extra days off during the week to decompress - bear in mind she was off since Thursday last week ( sick) before I saw her today. \n\nI'd like to I get some thoughts on what other business owners would do to handle this ?",
+      "gold": "OPERATIONS_PEERS",
+      "predicted": "GROWTH_ADVICE"
+    },
+    {
+      "text": "Used bookstore: beginning inventory\n\nIve been wanting to start a used bookstore for a while. I buy a lot of books from library sales. If I used former library books (paid for) or books found at garage sales for starting inventory - would that be acceptable? That feels kind of like cheating, but its not like im stealing from Little Free Libraries either. \ud83e\udd14",
+      "gold": "GROWTH_ADVICE",
+      "predicted": "GROWTH_ADVICE"
+    },
+    {
+      "text": "Looking for small business llc CPA offering tax planning services based in IL or online. Can anyone please recommend based on experiences?\n\nHi, I am looking for a CPA who works with small-business LLCs and offers proactive tax planning, not just tax filing. Would appreciate recommendations based on your personal experience. Thanks!",
+      "gold": "TOOLS_RECOMMENDATION",
+      "predicted": "LEGAL_MONEY_QUESTION"
+    },
+    {
+      "text": "Building the product was easy compared to getting anyone to notice it\n\nMade redundant earlier this year after eight years in a government job, so I started a small cyber security business in the North East of England. I\u2019m a self-taught developer, so the building part went fine.\n\nThe part I didn\u2019t expect: almost total silence. Consistent posting, hundreds of cold emails, free previews offered to local businesses, and very little back. No rejections, just nothing.\n\nMy takeaway so far is that people buy from people they\u2019ve met or been introduced to, especially for anything to do with trust and security. So I\u2019m shifting to local events I think I am going to shift my focus to local events. \n\nFor those who\u2019ve been through this: what actually got you your first few customers? And did online networking ever work for you, or was it all in person?\n\nI know they say your first customers are the hardest but I never expected it to be this hard!",
+      "gold": "GROWTH_ADVICE",
+      "predicted": "GROWTH_ADVICE"
+    },
+    {
+      "text": "Website Help\n\nOne of my workers wants to try making websites if anyone wants one they can ask me and get one for pretty cheap. Back to Business does anyone know a good website guy for a gift shop?",
+      "gold": "TOOLS_RECOMMENDATION",
+      "predicted": "GROWTH_ADVICE"
+    },
+    {
+      "text": "how do i get customers for making a website\n\nive sent over 50 messages to many companys or small start ups, they either dont respond to me anymore because they take it the wrong way or just dont answer",
+      "gold": "GROWTH_ADVICE",
+      "predicted": "GROWTH_ADVICE"
+    },
+    {
+      "text": "Would like to discuss about my startup with some one get real feedback and suggestions.\n\nWe are a SAAS startup for the financial institutions. A few days back i planned to scale earlier i was managing everything on my own I now hired a few staff but still everything is dependent upon me. \n\nCustomers say you have a great product but need to wait till the next financial start to switch the software. \n\nCompetitors are all over the places and already giving service to the clients with their broken or old software. \n\nIt's difficult to get the users who are already using competitors software. \n\nI think I am in trouble and genuinely need help to understand and plan for the future. \n\nI don't want to quit but I only have 2-3 months run way cash to pay salaries.\n\nI am from india, Karnataka and running this from tier 3 city.",
+      "gold": "GROWTH_ADVICE",
+      "predicted": "GROWTH_ADVICE"
+    },
+    {
+      "text": "Confused about Wave invoicing and fees on the free plan\n\nI just signed up for a free account - and realize they make their money for the invoicing stuff.  \n  \nWhile it seems pretty clear on the overall credit card fees - example:\n\nVisa - 2.9% + $0.60\n\nThat seems like a great rate and is lower than what I pay for PayPal credit card fees of $3.5%.\n\nWhere I get confused is, where does the money go after someone pays with a credit card?\n\nDo I have to transfer it manually into my bank account like I do with PayPal.\n\nThen further down on the fees page it says:\n\nACH 1% (minimum fee of $1)\n\nInstant Payouts  1% (minimum fee of $1)\n\nI guess I don't understand that - would I have to transfer funds received via credit card to my bank and then incur an additional fee for that transfer??\n\nAs 2.9% + 1% = 3.9% which would be worse than PayPal.\n\nI'm just confused how this works - or is the ACH fee only if someone pays you with ACH?\n\nAgain I just don't want to pay a credit card fee and then a fee to actually get the funds into my business banking account.\n\nI'd probably stick with PayPal invoicing - except I just signed up and already had 2 clients pay very large bills, and suddenly PayPal is hitting the account with a 21 day hold on all funds received until they up the limit which you can only request every 30 days. Didn't expect the freeze or crazy low limit - as I'm a computer programmer and just billing hourly work - which I don't view as high risk... And PayPal writes email saying you are high risk - mark your invoices shipped - well I don't ship and anything and the invoices didn't indicate any shippable items. I think PayPal probably does this to a lot of new accounts.",
+      "gold": "LEGAL_MONEY_QUESTION",
+      "predicted": "LEGAL_MONEY_QUESTION"
+    },
+    {
+      "text": "Is emailing a PDF invoice actually why I keep getting paid late?\n\nGenuine question because I'm about to change how I bill. Right now I email a PDF like everyone else. It lands in an inbox with 400 other emails, I have no idea if they opened it, and 3 weeks later I'm writing \"hey just floating this back to the top\" like I did something wrong\n\nFriend of mine switched to sending a link instead of an attachment. He can see when it was opened and it nudges the client on its own. Says he gets paid like a week faster on average. Feels like it would be less \"professional\" but honestly professional is getting paid\n\nSo for people who send a lot of invoices, does the format actually matter? Has anyone gone PDF to link or the other way and noticed a difference in how fast you get paid? And is the \"my client's AP department needs a PDF\" thing real or is that just what we tell ourselves",
+      "gold": "OPERATIONS_PEERS",
+      "predicted": "LEGAL_MONEY_QUESTION"
+    },
+    {
+      "text": "Match listed\n\nI recently found out my business partner was on match list and we both were confused . After research with back and forth with emailing match they finally found that it was the address and phone number of the restaurant we just recently took over and did not change phone number beside the name and that it\u2019s under the llc. \n\nAnyone know how we can get a merchant credit card processing approve if the address is flag on match ?   \nWill this be tough to get a merchant to approve bc the address is related to previous owner and not us? We got new lease and new llc just didn\u2019t get new business phone number yet ( bc we didn\u2019t want customer to get confused with a new phone number ? \n\nAppreciate any help thanks",
+      "gold": "OPERATIONS_PEERS",
+      "predicted": "LEGAL_MONEY_QUESTION"
+    }
+  ]
+}

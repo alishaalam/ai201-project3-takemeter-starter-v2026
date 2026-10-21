@@ -1,0 +1,190 @@
+{
+  "model": "facebook/bart-large-mnli",
+  "n": 30,
+  "seed": 42,
+  "held_out": true,
+  "used_definitions": true,
+  "scores": {
+    "n": 30,
+    "accuracy": 0.5,
+    "f1_macro": 0.32795698924731187,
+    "per_label": {
+      "GROWTH_ADVICE": {
+        "precision": 0.5263157894736842,
+        "recall": 0.8333333333333334,
+        "f1": 0.6451612903225806,
+        "support": 12
+      },
+      "LEGAL_MONEY_QUESTION": {
+        "precision": 0.5555555555555556,
+        "recall": 0.8333333333333334,
+        "f1": 0.6666666666666667,
+        "support": 6
+      },
+      "OPERATIONS_PEERS": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 7
+      },
+      "TOOLS_RECOMMENDATION": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 5
+      }
+    }
+  },
+  "predictions": [
+    {
+      "text": "Grieving today with change in policy that'll severely impact my business\n\nLost a chunk of my business today with the change in a policy in my industry\n\nIt's a complicated story - \n\n2 years ago there was also a change in policy, and I thought it was the end, and I was also severely burned out. So I decided to stop and just take a break.\n\nThen about 4 months ago, I came across a business idea which felt excellent to do, and I tried to launch it to no avail. But after many attempts, it's finally likely to launch within the next 2-3 weeks.\n\nIn these 4 months, I also went through several rounds of medical treatment, finally finished, and then came down with a horrible fever and infection for another few weeks. It wasn't like I was sick per se, it's just that I decided to finally get certain procedures done-- and they somehow wiped me out completely.\n\nJust grieving a little as it really showed me what opportunity cost looks like. The idea that I sat with for months, that didn't get implemented, really cost me quite a lot.\n\nI came back from a round of burnout and depression and being lost, after 2 years, to find myself turning 40 - and still having to work. Something I could have gotten out of, if I had made better decisions. I could be focusing on building my family, taking holidays, having kids now... but instead I'm rebuilding these businesses and feeling grief and regretful.\n\nIn the past 2 months, it felt like I suddenly gained clarity on career. I term it as \"fog being lifted\" and indeed had been working endlessly. Even with a 3 week long fever. I could have launched this just a bit sooner, before the policy killed everything. But nope, it's still not launched yet.\n\nOn top of that, today is a special kind of anniversary, that reminded me of what (who) I lost - and in a way, how I should never have met the wrong person. I know this became a personal rant, but dealing with personal grief affects work and business so much.\n\nExactly 2 years ago, I also asked myself the same question on Reddit - \"What's the point of money and life, if there's no one to share with\" - and sad to say, I've returned to the same exact question. I guess the main difference now is that I'm determined to turn things out.\n\nI've actually tried to work and change things for the last 9 months now (all of this year) and I feel like things just got so much harder. 2 of my personal goals got badly affected by policy changes - one affects me getting a house (personal), the other one is the business that just couldn't, wouldn't work.\n\nFor now, I can only:\n\n1. Get over this, move on, do what I can now, look forward, work harder and smarter, make better decisions, and/or\n\n2. Lower my expectations in life\n\n  \nRebuilding businesses is hard enough. To do it while grieving and lonely, and getting over one physical challenge after another, is a whole level of challenge.",
+      "gold": "OPERATIONS_PEERS",
+      "predicted": "LEGAL_MONEY_QUESTION"
+    },
+    {
+      "text": "Finding CPA\n\nWe're looking for a reliable CPA for our business taxes and I'm not sure where to find legitimate help. We're on our second tax preparer and they're unreliable- both of our preparers are local businesses that we found through word of mouth. Is there a legitimate online database we can go through or are tax preparers notoriously unreliable/ uncommunicative? The first one just kept filing extensions and the second one can't even get into QB accountant view, and now they're asking for the personal log-in.\n\nAnd how do I check an accountants license?",
+      "gold": "TOOLS_RECOMMENDATION",
+      "predicted": "LEGAL_MONEY_QUESTION"
+    },
+    {
+      "text": "What are you guys actually paying for 1 lb 2-day shipping (UPS or FedEx)?\n\nRight now we're shipping items under 1 lb and getting killed on 2-day shipping. Using Pirate Ship and Amazon Buy Shipping, UPS 2nd Day Air ends up costing us around $14.\n\nI see competitors selling $20 products offering 2-day delivery without charging extra for shipping, so there's clearly a way to get this down. \n\nIf you're shipping 2-day air, what\u2019s your real all-in cost per label and what volume got you that rate?",
+      "gold": "OPERATIONS_PEERS",
+      "predicted": "GROWTH_ADVICE"
+    },
+    {
+      "text": "What tech services do local small businesses actually pay for?\n\nI\u2019m in the U.S. and exploring a service business for local, owner-run companies. I\u2019m more interested in tech than opening a physical storefront, and I\u2019d like to build something I can deliver to several businesses.\n\nAI implementation seems like a popular opportunity, but I suspect a new provider needs to earn a lot of trust before an owner will hand over important workflows or business data. I\u2019m curious about other tech-related services that solve a real problem and are easier to start with.\n\nFor those who own or work with local businesses: What services have you seen small businesses pay for consistently?\n\nI\u2019m especially interested in firsthand experience, including what didn\u2019t work. I haven\u2019t settled on an idea yet and want to learn what\u2019s worth validating in my area.",
+      "gold": "GROWTH_ADVICE",
+      "predicted": "OPERATIONS_PEERS"
+    },
+    {
+      "text": "Shopify attribution for short-form video content\u2014how do you measure actual revenue per video?\n\nWe run video content to push store traffic, but native analytics don't show which specific Reel or TikTok converted into a checkout. Are you guys relying on post-purchase surveys, UTMs, or a specific tool?",
+      "gold": "GROWTH_ADVICE",
+      "predicted": "GROWTH_ADVICE"
+    },
+    {
+      "text": "Should I charge a minimum monthly fee for small clients?\n\nI run a small service business with fixed costs (space and my time). Some new clients would only bring in a few orders a month. \n\nDo you set a minimum monthly fee to cover that, or does it scare off small clients? \n\nWhat worked for you?\n\nFor anyone who handles stock in their business, what actually fixed this for you? \n\nRegular counts, barcode scanning, better receiving checks, or something else? \n\nWhat was a waste of time?\n\nAny advice is appreciated, thanks!",
+      "gold": "GROWTH_ADVICE",
+      "predicted": "GROWTH_ADVICE"
+    },
+    {
+      "text": "Frisch gepresster Orangensaft-Service im B\u00fcro.. n\u00f6tig oder unn\u00f6tig?\n\nIch m\u00f6chte ein Walk-In Business starten, bei dem ich mit einer Orangensaftpresse B\u00fcros und Events besuche. Der Saft wird direkt vor den Augen frisch gepresst und verg\u00f6nnt den Leuten eine kleine Auszeit vom Tag oder gibt ihnen einen Stimmungsboost im doch manchmal \u00f6den B\u00fcroalltag. Die Kosten w\u00fcrden die Arbeitgeber und Event-Organisatoren tragen. \n\nBei der Planung bekomme ich aber gerade viel Gegenwind aus meinem Umfeld - es w\u00fcrden sich keine Kunden finden, ich solle es anders herum betrachten und die B\u00fcros bezahlen damit ich \u00fcberhaupt bei ihnen ausschenken d\u00fcrfte und Unternehmen w\u00fcrden f\u00fcr sowas kein Geld ausgeben. Auch eine Stimme sagte der Arbeitstag w\u00e4re viel zu stressig um daf\u00fcr Schlange zu stehen und als Arbeitgeber w\u00fcrde sie nicht wollen, dass ihre Arbeitnehmer ihre Zeit damit verbummeln (Aussage einer Boomer Kleinunternehmerin)\n\nIch sehe das anders: Es k\u00f6nnte wie eine neu  gedachte Version des Obstkorbs sein, mit dem sich Unternehmen beim Employer Branding profilieren k\u00f6nnten, es w\u00fcrde Wertsch\u00e4tzung ausdr\u00fccken, k\u00f6nnte der Immunbooster im Winter sein, oder das gewisse Etwas bei Events. \n\nWas meint ihr?   \nA) W\u00fcrdet ihr einen Saft trinken wenn er vom Arbeitgeber bezahlt wird? / H\u00e4ttet ihr Zeit daf\u00fcr?  \nB) wenn der AG nicht zahlt, w\u00fcrdet ihr selber daf\u00fcr zahlen, wenn jemand bei euch ins B\u00fcro kommt?  \nC) als HRler oder AG: w\u00fcrdest du daf\u00fcr Geld ausgeben?",
+      "gold": "GROWTH_ADVICE",
+      "predicted": "GROWTH_ADVICE"
+    },
+    {
+      "text": "I\u2019ve just started and I\u2019m already exhausted\n\nRecently bought a small shop near the city with a decent turnover, I got one foot in already but still not completely in it due to bank circumstances. I\u2019m not worried about that part though I know I will get to run this business for sure. But after few months now I have done quite a lengthy training and preparing myself into business, I\u2019m so exhausted already and wanting to nap at like by noon. I\u2019m just exhausted from constant thinking and taking in a lot of information, I dont want to get burnt out too quick. I keep reminding myself that this is actually fun and I really want to do this because it has always been my life goal, but its just a lot to take in. Genuinely just asking small business owners here whether youre just starting or experienced if there are any tips you\u2019d like to share how you get through and what helps you becoming a bit less overwhelming.\n\n\ud83e\udee0",
+      "gold": "OPERATIONS_PEERS",
+      "predicted": "GROWTH_ADVICE"
+    },
+    {
+      "text": "Using Claude/Codex to grow a business Instagram \u2014 followers, engagement, and reaching potential customers and partners\n\nI'm trying to grow a small business Instagram. The goal isn't just followers \u2014 it's\u00a0**engagement**, and reaching the right people:\u00a0**potential customers, clients and partners**. I'm considering using Claude or Codex (including their browser extensions) to help.\n\nWhat I'm hoping AI can do:\n\n* Analyse my profile and Insights to see what drives engagement and what doesn't\n* Study similar accounts and identify where my target customers and partners actually spend time\n* Plan content and write captions aimed at that audience, not just broad reach\n* Help with outreach \u2014 finding relevant potential customers and partners, and drafting personalised DMs and comments\n\nQuestions:\n\n* Has anyone used AI this way and seen real growth in engagement, not just follower count? What helped most?\n* How do you use AI to find and target the\u00a0*right*\u00a0accounts \u2014 potential customers or partners \u2014 rather than random followers?\n* Where's the line on automation? I assume letting an agent like, follow or DM directly risks a restriction \u2014 has anyone been flagged?\n* For outreach to potential partners or clients, do AI-drafted but manually sent DMs actually get replies, or do people spot it?\n\n**Also, if there are better ways to do this apart from Claude or Codex \u2014 other tools, methods, or approaches that worked for you \u2014 please let me know.**\u00a0Open to anything that genuinely helped.\n\nReal experiences would be hugely appreciated.",
+      "gold": "GROWTH_ADVICE",
+      "predicted": "GROWTH_ADVICE"
+    },
+    {
+      "text": "Am I 1099 or w2?\n\nI live in Oregon specifically Yamhill County. I\u2019m like 90% sure I\u2019m supposed to be a W-2 employee however I came on as 1099 over the course of the relationship. I have done less and less 1099 working more W-2. They set my days they\u2019re not specific on what hours I work, but it\u2019s you work eight hours a day they told me how to do my job and provide the bigger tools.  \nBut recently over the course of the last like a year, the pay comes, but it\u2019s not exactly steady and the benefit we agreed on they just randomly decided to just stop providing because money got tight and it kind of pops in and out whenever they want or feel like paying, most the time it\u2019s at the end of whatever stage the job is at.  \nHow do I have this conversation with them without being either fired or let go because on one hand if they wanna screw me over, I\u2019ll just pursue them legally. I just wanna know if I have a leg to stand on if they decide they\u2019re going to screw me over for pulling up the \u201cyou guys are doing a legal stuff\u201d card.  \nI apologize for the chopped post.",
+      "gold": "LEGAL_MONEY_QUESTION",
+      "predicted": "LEGAL_MONEY_QUESTION"
+    },
+    {
+      "text": "Lawsuit-\n\nOur small business (an LLC in Georgia) was sued over an auto accident, and our insurance company denied coverage. The business already has a lot of debt, so a judgment could sink us.  \nWe're trying to figure out our options. Is it worth fighting the insurance denial? Does it make sense to try to settle, or to look at bankruptcy for the LLC? What happens to the owners personally if the business can't pay?  \nAny advice or experience with a situation like this is appreciated. We're planning to talk to an attorney but want to understand the landscape first.",
+      "gold": "LEGAL_MONEY_QUESTION",
+      "predicted": "GROWTH_ADVICE"
+    },
+    {
+      "text": "Navigating Qualifying Agent risk\n\nFor businesses that require someone to hold a license covering the whole business (master tech, top tier pest control, etc) how do you handle finding someone willing to lend the business their license in the beginning? I think my plan would be to work on getting the license but for many of these it requires 2 or 3 years time to even sit for the exams. Recruit a couple and let the more junior one work toward their license to build redundancy?\n\nWorried about the prospect of an employee jumping ship causing the company I start to have to temporarily cease work.",
+      "gold": "LEGAL_MONEY_QUESTION",
+      "predicted": "LEGAL_MONEY_QUESTION"
+    },
+    {
+      "text": "Dilemma with the customer and saying \u201cNO\u201d\n\nSo I\u2019m in a service industry (auto repair). Long story short I sent a quote (he needs starter), guy said he\u2019ll think about it. No problem at all. Over the phone estimates are free. I don\u2019t think twice about it. I have work. He calls me back a week later and starts conversation with \u201c Hey, BIG JHON, since you told me that you can not do the job last week and you won\u2019t be able to get parts for at least a week I decided to call someone else and the guy did a great job getting the car started but now it doesn\u2019t run right as guy says that he doesn\u2019t know what it is and can\u2019t work on it. I wanted you to come look at it\u201d. I kid you not, he had the balls to tell me that I told him something about not being able to do the job that week (when in reality I sent reminders twice and no response) and on top of that he found a guy cheaper who fucked up and now he\u2019s calling me. If it was old me I\u2019d tell him to kick rocks but I\u2019m running 5 star business and have to be smart about it. Wanted you advice, how do you say no to customer so he doesn\u2019t leave a bad review or something. I don\u2019t really need that kind of business but I don\u2019t want him to feel offended or anything. How do you decline business so customers will not leave a bad review? I\u2019ve had 5 star ratings until one guy left 1 star because I couldn\u2019t call him back in time and we never did business. Despite me replying to his text messages and giving advice on things for free he got mad that I didn\u2019t call him back. So how do you make sure something ridiculous like this doesn\u2019t happen",
+      "gold": "OPERATIONS_PEERS",
+      "predicted": "GROWTH_ADVICE"
+    },
+    {
+      "text": "payment processing for a small e-commerce site is killing me, what are you guys using?\n\nI run a small independent site selling handmade jewelry. just me, no team. site went live a while back and once orders actually started coming in I realized my payment setup is kind of a mess. the processing fees on my current payment API are way higher than I expected, and the whole flow after that is painful too. feels like I'm losing money just trying to receive money. anyone running a small e-commerce site found a payment provider that's actually affordable and doesn't make you jump through hoops to get your money out? what are you using?",
+      "gold": "TOOLS_RECOMMENDATION",
+      "predicted": "GROWTH_ADVICE"
+    },
+    {
+      "text": "Online Accounting\n\nLooking for updated reviews or recommendations for online or remote accounting like Collective, lettuce, etc. (the last post on here seemed to be a few years ago). \n\nBackground, I'm currently under a partnership LLC my wife and I formed a few years ago. Thanks to a recent layoff, I'm now working on my own and luckily doing pretty well to start. I need to either change my current LLC or form a new one, figure out my tax strategy for this year, and would like to be ready for S-corp election next year. \n\nI'm not sure if something like collective to could help solve my problem, but a few local CPAs I talked to are very expensive. ($4k / year for just returns and probably another $2-4k for planning, strategy, LLC formations... and wouldn't even include book keeping and payroll). I'd love to work with someone local but I also don't want to pay $10k+/year against a +/- $250k revenue.",
+      "gold": "TOOLS_RECOMMENDATION",
+      "predicted": "LEGAL_MONEY_QUESTION"
+    },
+    {
+      "text": "where do you draw the line between quoting a job and designing it for free?\n\nI\u2019m involved in my family's marble business.\n\nMost of our traditional work is straightforward enough to quote, slabs, dimensions, finish, quantity, transport, etc.\n\nBut we've started taking on more custom marble fabrication and finished-product enquiries, and I'm running into a problem I hadn't appreciated before.\n\nSomeone sends us a photograph of an object and says:\n\n**\u201cCan you make this in marble? What would it cost?\u201d**\n\nTo the customer, that's a request for a price.\n\nFor us, answering it properly might mean figuring out:\n\nWill the design even work in stone?\n\nWhat thickness will stop it breaking?\n\nCan the inside actually be machined?\n\nDoes it need two pieces rather than one?\n\nHow will hardware be fixed?\n\nWill it stand safely?\n\nHow much hand finishing will it need?\n\nHow do we pack it?\n\nAnd only after all of that can we estimate cost properly.\n\nBy that point, we've sometimes done a meaningful amount of product development for someone who may have casually sent the same image to ten manufacturers.\n\nBut I don't want to swing too far the other way either.\n\nIf somebody sends a simple enquiry and gets back a form asking 18 questions plus a design fee, we've created friction before they even know whether the project is remotely in budget.\n\nFor people doing custom fabrication/manufacturing \u2014 furniture, metalwork, millwork, stone, signage, etc. \u2014 how do you handle this?\n\nI'm considering something like:\n\nvery rough feasibility + price range for free,\n\nthen paid prototyping/engineering once the customer wants an accurate quote, with the fee credited against a production order.\n\nDoes that work in practice?\n\nWhere do you personally draw the line between **sales effort** and **unpaid engineering**?",
+      "gold": "OPERATIONS_PEERS",
+      "predicted": "GROWTH_ADVICE"
+    },
+    {
+      "text": "When should I start my business\n\nI\u2019m a 19 year old with no job currently I\u2019m a sophomore majoring in event management and I\u2019m trying to figure out when it would be ideal to start an event business? Should I start now? After I graduate? Longer? Furthermore how do I start? Is it worth it to have a building or should I only do online? How do I make a website? How do I make sure they\u2019ll pay me? I like doing seasonal events such as murder mysteries, Galentines, Halloween parties, birthdays, etc",
+      "gold": "GROWTH_ADVICE",
+      "predicted": "GROWTH_ADVICE"
+    },
+    {
+      "text": "Where to register DBA\n\nHi!  I am planning to start a business as a sole proprietor.  I don't want my home address listed, so I purchased a virtual business address with a physical location through a registered agent.  As an unincorporated entity, I'm required to register the DBA (Doing Business As) form with the county clerk.  The only issue is that the virtual address is physically in a different county than I am located, and where I would actually be operating out of.  Do I file with my county clerk, the virtual business address county clerk, or both?",
+      "gold": "LEGAL_MONEY_QUESTION",
+      "predicted": "LEGAL_MONEY_QUESTION"
+    },
+    {
+      "text": "What advice would you give for bringing handmade Jingdezhen ceramic artworks to sell globally?\n\nHey everyone,\n\nI\u2019m a handmade ceramic artisan from Jingdezhen, China, which recently obtained UNESCO World Heritage status.\n\nI create handcrafted porcelain myself and plan to collect works from other local artisans for global sales, mainly targeting the US and international markets. All pieces are 100% handmade, no factory production.\n\nI\u2019m in the early planning stage and just looking for genuine advice.\n\nWhat key tips would you share for selling handmade Jingdezhen ceramics worldwide?\n\nThanks a lot!\ud83e\udd79",
+      "gold": "GROWTH_ADVICE",
+      "predicted": "GROWTH_ADVICE"
+    },
+    {
+      "text": "Would you hire a GM whose son owns another similar contracting company 3 hrs away?\n\nWe\u2019re considering a qualified GM candidate whose son owns an electrical company about three hours away.  \nThe GM would have access to our bids, pricing, margins, customer relationships, and staffing plans. We don\u2019t know whether the companies compete or whether he has any financial or operational involvement in his son\u2019s business.  \nWould this be a dealbreaker? What questions would you ask before making an offer, and what boundaries would you set if you hired him? I\u2019d especially like to hear from anyone who has managed a similar family connection successfully.",
+      "gold": "OPERATIONS_PEERS",
+      "predicted": "LEGAL_MONEY_QUESTION"
+    },
+    {
+      "text": "I\u2019m starting an apparel business from scratch \u2014 what would you focus on first?\n\nI recently started building **Just V Apparel**, an independent T-shirt and hoodie brand based around my artwork.\n\nRight now I\u2019m working on figuring out the hardest part: getting people to actually discover a new brand.  \nFor those who have built a small product-based business, what was the first thing that actually helped you get your first customers?\n\nI\u2019m interested in hearing what worked for you \u2014 especially things that didn\u2019t require a huge advertising budget.",
+      "gold": "GROWTH_ADVICE",
+      "predicted": "GROWTH_ADVICE"
+    },
+    {
+      "text": "Confused about Wave invoicing and fees on the free plan\n\nI just signed up for a free account - and realize they make their money for the invoicing stuff.  \n  \nWhile it seems pretty clear on the overall credit card fees - example:\n\nVisa - 2.9% + $0.60\n\nThat seems like a great rate and is lower than what I pay for PayPal credit card fees of $3.5%.\n\nWhere I get confused is, where does the money go after someone pays with a credit card?\n\nDo I have to transfer it manually into my bank account like I do with PayPal.\n\nThen further down on the fees page it says:\n\nACH 1% (minimum fee of $1)\n\nInstant Payouts  1% (minimum fee of $1)\n\nI guess I don't understand that - would I have to transfer funds received via credit card to my bank and then incur an additional fee for that transfer??\n\nAs 2.9% + 1% = 3.9% which would be worse than PayPal.\n\nI'm just confused how this works - or is the ACH fee only if someone pays you with ACH?\n\nAgain I just don't want to pay a credit card fee and then a fee to actually get the funds into my business banking account.\n\nI'd probably stick with PayPal invoicing - except I just signed up and already had 2 clients pay very large bills, and suddenly PayPal is hitting the account with a 21 day hold on all funds received until they up the limit which you can only request every 30 days. Didn't expect the freeze or crazy low limit - as I'm a computer programmer and just billing hourly work - which I don't view as high risk... And PayPal writes email saying you are high risk - mark your invoices shipped - well I don't ship and anything and the invoices didn't indicate any shippable items. I think PayPal probably does this to a lot of new accounts.",
+      "gold": "LEGAL_MONEY_QUESTION",
+      "predicted": "LEGAL_MONEY_QUESTION"
+    },
+    {
+      "text": "Have a skilled team but no clients. How do I fix this?\n\nI qualified in ACCA at 21 and spent years in an outsourcing company doing ecommerce bookkeeping. My dream was always to build something of my own, so I finally left and started a firm with a few colleagues and friends , including qualified chartered accountants. They trusted my vision and took a real risk to join me.\n\nWe have 2 clients. I thought good work and hard effort would bring more. It hasn't. I've tried outreach, messaging, networking and different platforms, but I can't land client #3.\n\nIf anybody built a bookkeeping firm without much existing client contact, where did your first 5-10 clients actually come from? What worked, and what was a waste of time? I'd be grateful for honest advice.",
+      "gold": "GROWTH_ADVICE",
+      "predicted": "GROWTH_ADVICE"
+    },
+    {
+      "text": "Florist - How do you show your work without wasting bouquet?\n\nSo I currently started a floral gift basket/bouquet business as a side gig but I've only made 2 bouquets and 3 gift baskets with flowers in them. I'm trying to show more of my work to put out there and show people what I can do. I figure I can post the work I have done but if I don't get no customers putting in orders, do I keep making bouquets that may possibly go bad? Sell them at a discounted price and don't make any profit? I don't want to be wasteful but I'm also thinking I could also enjoy them for myself lol. Idk, I'm new to this and just wondering how any other florists first started up \ud83d\ude42",
+      "gold": "GROWTH_ADVICE",
+      "predicted": "GROWTH_ADVICE"
+    },
+    {
+      "text": "What to upgrade in the internal price list\n\nHi. We use a consolidated price list, in excel, and i was asked to upgrade it to cover more features. the columns are supplier, sku, name, moq, list price, discounted price with formula, converted price in local currency, translated name, brand, commodity, ean, weigths for item, box, master box, payment days.\n\nif color variants exist, they have their own sku.\n\nand these items are not parts that build another sku\n\nWhat else do you use in your price list + logistics list, coz these are unified in one file?\n\nAppreciate.",
+      "gold": "TOOLS_RECOMMENDATION",
+      "predicted": "GROWTH_ADVICE"
+    },
+    {
+      "text": "Has anyone used an AI marketing/scaling agency like this for a local service business? Are these claims realistic?\n\n>I manage a nail salon and recently came across a marketing/scaling company called AAA Agency. I\u2019m considering talking with them, but I wanted to get opinions from other small business owners before spending money on something like this.  \n>  \n>From what I understand, they\u2019re not just offering normal Google/Facebook ad management. Their model seems to combine paid advertising, content/branding, funnels, customer acquisition, and AI automation into one system designed to scale local businesses.  \n>  \n>Some of the things they claim their system can do include:  \n>  \n>\u2022 Automate 70%+ of customer acquisition/marketing activities  \n\u2022 Automate around 90% of existing-customer follow-up/care  \n\u2022 Use AI and automation for lead management and follow-ups  \n\u2022 Create a funnel designed to turn leads into customers rather than relying only on traditional ads  \n\u2022 Use content and branding to position the business as one of the top businesses in its local market  \n\u2022 Track results weekly/monthly and continually optimize the strategy  \n\u2022 Lower customer acquisition/advertising costs compared with competitors  \n\u2022 Potentially scale revenue 2\u20133x over roughly 12\u201318 months  \n>  \n>Obviously those are **their marketing claims**, and I\u2019m not assuming those results are guaranteed.  \n>  \n>What interests me is the automation side. The idea seems to be that instead of simply running an ad and hoping someone books, the business has an automated system that captures leads, follows up with them, nurtures existing customers, and handles parts of the marketing/customer journey automatically.  \n>  \n>I already run Google Ads for my salon, so I\u2019m trying to figure out whether a system like this actually provides something substantially different from what a competent owner/marketing agency could set up themselves.  \n>  \n>Has anyone here actually worked with **AAA Agency specifically**, or used a similar AI automation/scaling agency for a local service business?  \n>  \n>I\u2019d especially like to know what you paid, what they actually implemented, whether customer acquisition/bookings noticeably increased, whether the ROI justified the cost, and what parts of the \u201cAI automation\u201d were genuinely useful versus mostly marketing buzzwords.  \n>  \n>Nail salons, med spas, salons, gyms, dentists, restaurants, or other appointment/local service businesses would probably be the closest comparison.  \n>  \n>Just doing my due diligence before committing to anything.",
+      "gold": "TOOLS_RECOMMENDATION",
+      "predicted": "GROWTH_ADVICE"
+    },
+    {
+      "text": "I'm 17 and I feel so behind. Skills, job, freelancing, business... some words just never leave my mind.\n\nSo, I'm 17 and I don't know what is going on in my life. I passed 12th this year and decided to take a drop year. I don't know why, but I just did it. I was a PCB student. After 10th, I didn't research the streams and took PCB on my father's advice. I did 11th and 12th in PCB and scored above average. Because of the boards and the pressure, I did nothing but study, gained so much weight, and have no skills, no communication, nothing.\n\nI have had a dream of business since class 8th, and I still have it. Once I passed 12th, I wanted to help my father with our small wholesale surgical items business, or any other type of business, nothing other than business. But when I told my father about it, he not only rejected it but scolded me and changed his attitude towards me. It lasted for a month and a half: no peaceful talking, just upset faces and rejections.\n\nIn July, I decided to start a chocolate business of my own, from scratch and with zero experience. I learned many things, like tempering chocolate, the methods of making chocolates, and packing. I tried making chocolates by tempering compound chocolate, adding flavours to it, and making different varieties. But whenever my mother saw me doing it, she taunted me and told me to quit and get admission in a college. Every time I tried making chocolates, she interrupted me, but I kept trying. After constant failures and family taunts, I gave it up after a month of trying, and the compound chocolate I purchased still lies in the fridge. I even decided on a brand name, \"Mealtable\", and many more ideas, but I gave up. I had neither much capital nor even a few thousand rupees, nothing but an ambition, which I lost.\n\nSince mid-August, after dropping the idea of business, I started to think about skills and freelancing. A thought struck me about programming. I started learning C++ and it worked out for me, but I dropped it. Then I got interested in websites. I learned HTML and CSS from YouTube, and in a month I learned to create responsive pages and made a YouTube clone and many other projects. Now I am learning JS. I had so many degrees in mind, like B.Pharm, Biotech, and many more, but now I am thinking of BCA after my gap year and pursuing my career further in web development. I will get a job or do freelancing.\n\nI am also learning video editing with a free software, Kdenlive. I have actually been into editing since class 8th, when I used to edit gaming videos and post them on YouTube. But I have no money for Adobe Premiere Pro.\n\nI am from India, and my routine is messed up. I wake up late and sleep late. In the morning, I do JS lectures, notes, and some self-coding. I give a minimum of 5 to 6 hours to this. In the evening, I work out, and at night I learn video editing and then sleep. Then I repeat. I know I need to fix my sleep schedule and I'm working on it.\n\nI know I sound crazy ;) but I was never given a moment in my life to choose for myself, and neither did I. Now the whole life choice is in front of me. No guidance, just me, myself, exploring and trying. I hope I make it in life, because I have a family I want to make proud. I don't fear hard work, and I will do whatever it takes to achieve my dream.\n\n**My questions:**\n\n1. I have wanted to do business since class 8th and I still do. Is BCA the right path for me, or should I build web development and freelancing skills now and start my own business later?\n2. With the IT job market being so saturated, what skills or projects actually make a beginner stand out and earn well?\n3. I have been learning web development for about 2 months and I enjoy building projects. I also have video editing experience since class 8th. How do I know if web development is the right career for me, and can I combine it with business and editing?",
+      "gold": "GROWTH_ADVICE",
+      "predicted": "TOOLS_RECOMMENDATION"
+    },
+    {
+      "text": "Which is better ?\n\nWhich thing is better for social media marketing \u2026 doing content only about the product and repeat or making a content about something related to the product and promoting it at the end of the videos(which means eventually mire diverse content)",
+      "gold": "GROWTH_ADVICE",
+      "predicted": "GROWTH_ADVICE"
+    },
+    {
+      "text": "Best practices for collecting W-9s from contractors now that the threshold is $2k?\n\nHey guys, since the W9 threshold went up to $2k, my team has gotten too laxed with collecting w9 details from contractors on some of our smaller jobs. In theory this is okay, but the issue is whenever we have repeat vendors/contractors and their jobs add up past $2k, which has led us to chasing a lot of them for their details. What are the best practices for collecting w9's from these guys? We use QB but not sure if theres an integration in here somewhere to help with that",
+      "gold": "LEGAL_MONEY_QUESTION",
+      "predicted": "LEGAL_MONEY_QUESTION"
+    },
+    {
+      "text": "Business Owners: STAY AWAY from Hibu Marketing. Consider this your warning.\n\n**Business Owners: STAY AWAY from Hibu Marketing. Consider this your warning.**  \nI cannot believe how absolutely awful my experience with Hibu has been. If you\u2019re a small business owner considering them, PLEASE do your homework before signing anything.  \nThe salesperson told me everything I wanted to hear to get my signature. I specifically requested $3,000/month toward Google Ads. I was told 100% would go toward advertising because Hibu \u201cmakes their money elsewhere.\u201d Turns out only about $1,500 was actually allocated to Google Ads, with the rest going toward other services.  \nI was also told I could change my Google Ads budget at any time. That turned out to be another promise that wasn\u2019t honored.  \nAnd their supposedly \u201ccustom\u201d websites? I discovered another auto repair shop IN MY SAME CITY, with the SAME SALESPERSON, had essentially the same website, right down to the stock photo!  \nI\u2019ve had TWO website services canceled and an SEO package terminated after numerous issues.  \nThe incompetence and lack of communication have been unbelievable. In my experience, if you actually care about your business, plan on babysitting everything, catching mistakes yourself, and doing the work you\u2019re supposedly paying these people to handle.  \nHere\u2019s the part that absolutely blows my mind.  \n**I FIRED THEM. I hired another company. I told Hibu to stop advertising my business. I even sent a cease-and-desist.**  \nTheir response? They refuse to terminate my Google Ads contract. Instead, they\u2019ve repeatedly offered me credits toward services I have made abundantly clear I DO NOT WANT.  \n**It\u2019s MY business. MY reputation. And I no longer want this company representing either one.**  \nI\u2019ve never encountered a company so determined to hold on to an unhappy customer rather than simply part ways.  \nI\u2019m sharing my experience because I wish someone had warned me before I signed. Get EVERY sales promise in writing, demand a breakdown of where every advertising dollar goes, and read the cancellation terms carefully.  \n**My experience with Hibu has been an absolute nightmare. Other small business owners deserve to know what they\u2019re potentially signing up for.**",
+      "gold": "OPERATIONS_PEERS",
+      "predicted": "GROWTH_ADVICE"
+    }
+  ]
+}
