@@ -240,25 +240,20 @@ The counts come from sampling for balance, so they do not match the natural mix 
 
 ## Baseline vs. Trained
 
-<!-- Both models on the same posts. `python baseline.py --trained results.json`
-     prints this table for you. -->
+Both models were scored on the same 30 posts in `test_split.csv`. The baseline is the zero-shot `facebook/bart-large-mnli`, which reads only my label definitions. It ran on Apple Silicon (`mps`). The trained model is the seed 42 run.
 
 | Measure | Baseline | Trained | Difference |
 |---|---|---|---|
-| Overall accuracy |  |  |  |
-| Macro F1 |  |  |  |
-| F1 — `label_one` |  |  |  |
-| F1 — `label_two` |  |  |  |
+| Overall accuracy | 0.567 | 0.400 | -0.167 |
+| Macro F1 | 0.414 | 0.143 | -0.271 |
+| F1 — `GROWTH_ADVICE` | 0.733 | 0.571 | -0.162 |
+| F1 — `LEGAL_MONEY_QUESTION` | 0.588 | 0.000 | -0.588 |
+| F1 — `OPERATIONS_PEERS` | 0.000 | 0.000 | +0.000 |
+| F1 — `TOOLS_RECOMMENDATION` | 0.333 | 0.000 | -0.333 |
 
-**What I predicted before I looked:**
-<!-- Milestone 1 asks you to write this BEFORE seeing the trained numbers. A
-     prediction made afterwards isn't one. -->
+**What I predicted before I looked:** I predicted that the baseline would get at least 50% of the posts right. I wrote this after I had seen my trained model's numbers (accuracy 0.40, every post predicted as `GROWTH_ADVICE`) but before I saw any baseline number, so it is a prediction about the baseline and not about where training would win. The baseline got 0.567 (17 of 30), so the prediction held, by a margin of two posts.
 
-**What the gap actually means:**
-<!-- If the baseline matched your trained model, your fine-tuning added
-     nothing — and that is a real finding, not a failure. Say it plainly. -->
-
-
+**What the gap actually means:** My fine-tuning added nothing over the baseline in this run. The trained model is worse on accuracy, on macro F1 and on three of four labels, and it ties at zero on `OPERATIONS_PEERS`. The baseline can spread its guesses across the labels using only my definitions, while the trained model collapsed to one label. With 30 test posts, one post is 3.3 points of accuracy, and three labels have fewer than 8 test posts, so these gaps are noisy. The baseline also scores 0.000 on `OPERATIONS_PEERS`, the label I found hardest to separate from `LEGAL_MONEY_QUESTION` when I re-labelled. I'll test whether the gap holds across three seeds before drawing conclusions.
 
 ---
 
